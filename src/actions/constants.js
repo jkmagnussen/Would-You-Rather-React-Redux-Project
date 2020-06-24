@@ -1,0 +1,4 @@
+export const SET_AUTH_USER = "AUTH_USER";
+export const UNSET_AUTH_USER = "UNSET_AUTH_USER";
+
+export const CREATE_QUESTION = "CREATE_QUESTION";
