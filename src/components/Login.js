@@ -22,16 +22,15 @@ class Login extends React.Component {
   };
 
   render() {
+    const { users } = this.props;
     return (
       <form>
         <select value={this.state.selectedId} onChange={this.handleSelectUser}>
-          {this.props.users.map((user) => {
-            return (
-              <option key={user.id} value={user.id}>
-                {user.name}
-              </option>
-            );
-          })}
+          {Object.keys(users).map((user) => (
+            <option key={user} value={user}>
+              {users[user].name}
+            </option>
+          ))}
         </select>
       </form>
     );

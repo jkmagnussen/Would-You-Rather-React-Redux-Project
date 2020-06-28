@@ -9,7 +9,9 @@ import {
   recieveQuestions,
   createQuestion,
   saveQuestionAnswer,
-} from "../actions/actionQuestions";
+} from "./actionQuestions";
+
+import { recieveUsers } from "./actionUsers";
 
 import { showLoading, hideLoading } from "react-redux-loading";
 
@@ -29,11 +31,11 @@ function getInitialData() {
   );
 }
 
-export function handleGetInitialData({ users, questions }) {
+export function handleGetInitialData() {
   return (dispatch) => {
     return getInitialData().then((questions, users) => {
-      dispatch(recieveQuestions());
-      dispatch(_getUsers());
+      dispatch(recieveQuestions(questions));
+      dispatch(recieveUsers(users));
     });
   };
 }
