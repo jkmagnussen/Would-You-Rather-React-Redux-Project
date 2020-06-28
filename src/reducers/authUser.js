@@ -1,6 +1,6 @@
 import { SET_AUTH_USER, UNSET_AUTH_USER } from "../actions/constants";
 
-function authUser(state, action) {
+export function authUser(state = null, action) {
   switch (action.type) {
     case SET_AUTH_USER:
       return action.id;
