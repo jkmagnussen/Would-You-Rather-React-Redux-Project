@@ -33,7 +33,7 @@ function getInitialData() {
 
 export function handleGetInitialData() {
   return (dispatch) => {
-    return getInitialData().then((questions, users) => {
+    return getInitialData().then(({ questions, users }) => {
       dispatch(recieveQuestions(questions));
       dispatch(recieveUsers(users));
     });

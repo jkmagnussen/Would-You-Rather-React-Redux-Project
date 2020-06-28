@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 
 export default function Nav() {
   return (
-    <nav className="nav">
-      <ul>
+    <nav className="navWrap">
+      <ul className="nav">
         <li>
-          <NavLink to="/" exact activeClassName="active">
+          <NavLink className="navTab" to="/" exact activeClassName="active">
             Home
           </NavLink>
         </li>
@@ -14,6 +14,10 @@ export default function Nav() {
           <NavLink to="/new" activeClassName="active">
             New Tweet
           </NavLink>
+        </li>
+        <li className="loggedAs">
+          Logged in as:
+          <button>Logout</button>
         </li>
       </ul>
     </nav>

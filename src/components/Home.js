@@ -1,9 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
+import Nav from "./Nav";
 
 class Dashboard extends React.Component {
   render() {
-    return <div>testing</div>;
+    return (
+      <div>
+        <Nav />
+        testing
+      </div>
+    );
   }
 }
 

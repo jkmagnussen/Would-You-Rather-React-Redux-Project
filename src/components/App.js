@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleGetInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading";
-import Nav from "./Nav";
-
+import "../index.css";
 import Home from "./Home";
 import NewPoll from "./NewPoll";
 import Leaderboard from "./Leaderboard";
@@ -18,14 +17,18 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
-        <Fragment>
-          <LoadingBar />
-          <div className="container">
-            <Nav />
-            {this.props.loading === true ? null : (
+      <div className="container">
+        <Router>
+          <Fragment>
+            <LoadingBar />
+            <div>
+              <h1 className="mainTitle">
+                Would <br />
+                You Rather
+              </h1>
+
               <div>
-                {this.props.authedUser ? (
+                {this.props.authedUser === null ? (
                   <Route path="/Home" exact component={Home} />
                 ) : (
                   <Route path="/" exact component={Login} />
@@ -34,11 +37,11 @@ class App extends Component {
                 <Route path="/leaderboard" component={Leaderboard} />
                 <Route path="/new" component={NewPoll} />
               </div>
-            )}
-          </div>
-          <Footer />
-        </Fragment>
-      </Router>
+            </div>
+            <Footer />
+          </Fragment>
+        </Router>
+      </div>
     );
   }
 }
