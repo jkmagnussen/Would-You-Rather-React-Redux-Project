@@ -25,7 +25,7 @@ class Footer extends React.Component {
             }}
           />
         </a>
-        <a href="https://github.com/jkmagnussen/twitter-clone-react-redux">
+        <a href="https://github.com/jkmagnussen/Would-Yoy-Rather--React-Redux-Project">
           <img
             className="github"
             src={github}

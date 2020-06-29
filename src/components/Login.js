@@ -1,13 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
+
 import { connect } from "react-redux";
 
-import tormund from "./Media/tormund.jpg";
+import outline from "./Media/outline.png";
 
-import User from "./User";
 import { setAuthUser } from "../actions/actionsAuthUser";
-import { handleGetInitialData } from "../actions/shared";
 
 class Login extends React.Component {
   constructor(props) {
@@ -42,13 +39,14 @@ class Login extends React.Component {
     const { users } = this.props;
     return (
       <form className="loginWrap" onSubmit={this.handleSubmit}>
-        <img className="loginImg" src={tormund} />
+        <img className="loginImg" src={outline} />
         <br />
         <select
           className="selectLogin"
           value={this.state.selectedId}
           onChange={this.handleSelectUser}
         >
+          <option>Select a username</option>
           {Object.keys(users).map((user) => (
             <option key={user} value={user}>
               {users[user].name}
@@ -66,7 +64,7 @@ class Login extends React.Component {
 
 function mapStateToProps({ users }) {
   return {
-    users: users,
+    users,
   };
 }
 

@@ -4,16 +4,15 @@ import { connect } from "react-redux";
 import { handleGetInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading";
 import "../index.css";
-import Home from "./Home";
-import NewPoll from "./NewPoll";
-import Leaderboard from "./Leaderboard";
 import Login from "./Login";
+import Routes from "./Routes";
 
+import Navbar from "./Navbar";
 import Footer from "./Footer/ExternalFooter/Footer";
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(handleGetInitialData());
+    this.props.handleGetInitialData();
   }
   render() {
     return (
@@ -26,17 +25,7 @@ class App extends Component {
                 Would <br />
                 You Rather
               </h1>
-
-              <div>
-                {this.props.authedUser === null ? (
-                  <Route path="/Home" exact component={Home} />
-                ) : (
-                  <Route path="/" exact component={Login} />
-                )}
-
-                <Route path="/leaderboard" component={Leaderboard} />
-                <Route path="/new" component={NewPoll} />
-              </div>
+              <Routes notLoggedOn={this.props.notLoggedOn} />
             </div>
             <Footer />
           </Fragment>
@@ -46,10 +35,18 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ authUser }) {
   return {
-    loading: authedUser === null,
+    notLoggedOn: authUser === null,
   };
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return {
+    handleGetInitialData: () => {
+      dispatch(handleGetInitialData());
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

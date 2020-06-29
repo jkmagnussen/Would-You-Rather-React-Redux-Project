@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-class User extends React.Component {
+class CreateQuestion extends React.Component {
   render() {
     const { user } = this.props;
     return (
@@ -20,4 +20,4 @@ function mapStateToProps({ users }, { id }) {
   };
 }
 
-export default connect(mapStateToProps)(User);
+export default connect(mapStateToProps)(CreateQuestion);
