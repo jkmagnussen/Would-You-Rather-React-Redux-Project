@@ -39,7 +39,6 @@ class Login extends React.Component {
     const { users } = this.props;
     return (
       <form className="loginWrap" onSubmit={this.handleSubmit}>
-        <img className="loginImg" src={outline} />
         <br />
         <select
           className="selectLogin"
