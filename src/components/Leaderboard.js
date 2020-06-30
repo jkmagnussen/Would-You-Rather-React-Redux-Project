@@ -1,24 +1,29 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class TweetPage extends Component {
+import { saveQuestionAnswer } from "../actions/actionQuestions.js";
+
+class Leaderboard extends Component {
   render() {
-    const { id, replies } = this.props;
-    return <div>jjjjj</div>;
+    const { saveQuestionAnswer, questions, users, authUser } = this.props;
+    return <div>Leaderboard</div>;
   }
 }
 
-function mapStateToProps({ authedUser, tweets, users }, props) {
-  const { id } = props.match.params;
-
+function mapStateToProps({ questions, users, authUser }) {
   return {
-    id,
-    replies: !tweets[id]
-      ? []
-      : tweets[id].replies.sort(
-          (a, b) => tweets[b].timestamp - tweets[a].timestamp
-        ),
+    questions,
+    users,
+    authUser,
   };
 }
 
-export default connect(mapStateToProps)(TweetPage);
+function mapDispatchToProps(dispatch) {
+  return {
+    saveQuestionAnswer: () => {
+      dispatch(saveQuestionAnswer());
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Leaderboard);

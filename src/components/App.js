@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleGetInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading";
 import "../index.css";
-import Login from "./Login";
 import Routes from "./Routes";
 
 import Navbar from "./Navbar";
@@ -25,6 +24,9 @@ class App extends Component {
                 Would <br />
                 You Rather
               </h1>
+
+              {this.props.notLoggedOn !== null ? null : <Navbar />}
+
               <Routes notLoggedOn={this.props.notLoggedOn} />
             </div>
             <Footer />

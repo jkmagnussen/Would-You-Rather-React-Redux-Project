@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
-class ErrorPage extends Component {
+class ErrorPage extends React.Component {
   render() {
     const { id, replies } = this.props;
     return <div>aeee</div>;

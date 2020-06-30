@@ -2,8 +2,6 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-import outline from "./Media/outline.png";
-
 import { setAuthUser } from "../actions/actionsAuthUser";
 
 class Login extends React.Component {
