@@ -12,11 +12,9 @@ class QuestionInfo extends React.Component {
   }
 }
 
-function mapStateToProps({ questions, users, authUser }) {
+function mapStateToProps(state, { id }) {
   return {
-    questions,
-    users,
-    authUser,
+    id,
   };
 }
 

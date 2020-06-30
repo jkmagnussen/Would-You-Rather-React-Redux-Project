@@ -49,13 +49,18 @@ class Dashboard extends React.Component {
             title="Unread"
           >
             <div style={{ padding: 10 }}>
-              {Object.keys(this.props.users).map((qid) => (
+              {this.props.uncommented.map((qid) => (
                 <Question id={qid} />
               ))}
             </div>
           </Tabs.Tab>
           <Tabs.Tab className="tab2" id="tab2" title="Read">
-            <div style={{ padding: 10 }}>This is tab 2</div>
+            <div style={{ padding: 10 }}>
+              {" "}
+              {this.props.commented.map((qid) => (
+                <Question id={qid} />
+              ))}
+            </div>
           </Tabs.Tab>
         </Tabs>
       </div>
@@ -63,11 +68,18 @@ class Dashboard extends React.Component {
   }
 }
 
-function mapStateToProps({ questions, users, authedUser }) {
+function mapStateToProps({ questions, users, authUser }) {
+  const user = users[authUser];
+  const commented = Object.keys(user.answers);
+  const uncommented = Object.keys(questions).filter((question) => {
+    commented.includes(question);
+  });
+
   return {
     questions,
     users,
-    authedUser,
+    answeredQuestions: commented,
+    unansweredQuestions: uncommented,
   };
 }
 
