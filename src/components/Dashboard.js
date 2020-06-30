@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { handleGetInitialData } from "../actions/shared";
 import { Tabs } from "@feuer/react-tabs";
@@ -49,7 +48,7 @@ class Dashboard extends React.Component {
             title="Unread"
           >
             <div style={{ padding: 10 }}>
-              {this.props.uncommented.map((qid) => (
+              {this.props.unansweredQuestions.map((qid) => (
                 <Question id={qid} />
               ))}
             </div>
@@ -69,17 +68,17 @@ class Dashboard extends React.Component {
 }
 
 function mapStateToProps({ questions, users, authUser }) {
-  const user = users[authUser];
-  const commented = Object.keys(user.answers);
-  const uncommented = Object.keys(questions).filter((question) => {
-    commented.includes(question);
-  });
-
+  const commented = Object.keys(users[authUser].answers).sort(
+    (a, b) => questions[b].timestamp - questions[a].timestamp
+  );
   return {
-    questions,
-    users,
-    answeredQuestions: commented,
-    unansweredQuestions: uncommented,
+    unansweredQuestions: Object.keys(questions).filter(
+      (qid) =>
+        !commented
+          .includes(qid)
+          .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+    ),
+    commented,
   };
 }
 
