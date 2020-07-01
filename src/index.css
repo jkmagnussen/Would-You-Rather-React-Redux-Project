@@ -88,6 +88,7 @@ html {
   height: 120vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .selectLogin {
@@ -122,4 +123,38 @@ html {
 .tab1 {
   font-size: 100px;
   color: white;
+}
+
+.questionBox {
+  background-color: white;
+  opacity: 0.7;
+  text-align: left;
+  width: 40vw;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 3%;
+}
+
+ul {
+  text-decoration: none;
+}
+
+.questionSubtitle {
+  font-family: Galada;
+  color: gray;
+  margin: 0;
+}
+
+.questionBtn {
+  background-color: rgba(102, 22, 102, 0.596);
+  border-radius: 10px;
+  font-size: 2vw;
+  color: white;
+  padding: 1%;
+  margin: 3%;
+}
+.qTitle {
+  font-weight: 900;
+  font-size: 2vw;
 }

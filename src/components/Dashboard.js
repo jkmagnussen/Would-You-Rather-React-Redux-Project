@@ -24,7 +24,6 @@ class Dashboard extends React.Component {
     this.props.handleGetInitialData();
   }
   render() {
-    const { unansweredQuestions, answeredQuestions } = this.props;
     return (
       <div className="react-tabs">
         <Navbar />
@@ -49,7 +48,7 @@ class Dashboard extends React.Component {
           >
             <div style={{ padding: 10 }}>
               {this.props.unansweredQuestions.map((qid) => (
-                <Question id={qid} />
+                <Question id={qid} pic={this.props.userPics} />
               ))}
             </div>
           </Tabs.Tab>
@@ -57,7 +56,7 @@ class Dashboard extends React.Component {
             <div style={{ padding: 10 }}>
               {" "}
               {this.props.commented.map((qid) => (
-                <Question id={qid} />
+                <Question id={qid} pic={this.props.userPics} />
               ))}
             </div>
           </Tabs.Tab>
@@ -67,17 +66,14 @@ class Dashboard extends React.Component {
   }
 }
 
-function mapStateToProps({ questions, users, authUser }) {
+function mapStateToProps({ question, users, authUser }) {
   const commented = Object.keys(users[authUser].answers).sort(
-    (a, b) => questions[b].timestamp - questions[a].timestamp
+    (a, b) => question[b].timestamp - question[a].timestamp
   );
   return {
-    unansweredQuestions: Object.keys(questions).filter(
-      (qid) =>
-        !commented
-          .includes(qid)
-          .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
-    ),
+    unansweredQuestions: Object.keys(question)
+      .filter((qid) => !commented.includes(qid))
+      .sort((a, b) => question[b].timestamp - question[a].timestamp),
     commented,
   };
 }

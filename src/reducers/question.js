@@ -25,7 +25,6 @@ export default function question(state = {}, action) {
         },
       };
     case CREATE_QUESTION:
-      const { question } = action;
       return {
         ...state,
         [action.qid]: action.question,
