@@ -70,6 +70,7 @@ function mapStateToProps({ question, users, authUser }) {
   const commented = Object.keys(users[authUser].answers).sort(
     (a, b) => question[b].timestamp - question[a].timestamp
   );
+
   return {
     unansweredQuestions: Object.keys(question)
       .filter((qid) => !commented.includes(qid))

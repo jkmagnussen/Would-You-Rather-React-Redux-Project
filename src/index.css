@@ -63,6 +63,7 @@ a {
 
 .navWrap {
   width: 100vw;
+  margin: 0;
 }
 
 .logoutBtn {
@@ -129,7 +130,7 @@ html {
   background-color: white;
   opacity: 0.7;
   text-align: left;
-  width: 40vw;
+  width: 45vw;
   margin: auto;
   border-radius: 10px;
   text-align: center;
@@ -152,9 +153,39 @@ ul {
   font-size: 2vw;
   color: white;
   padding: 1%;
-  margin: 3%;
+  margin-bottom: 2%;
+  text-align: center;
+  display: inline;
+  width: 40vw;
+  font-weight: 600;
 }
 .qTitle {
   font-weight: 900;
   font-size: 2vw;
+  color: black;
+}
+
+.buttonAndVote {
+  display: inline;
+}
+
+.percent {
+  font-size: 2vw;
+  padding: 0;
+  font-weight: 800;
+
+  color: gray;
+}
+
+.total {
+  padding: 0;
+  margin-top: -20px;
+  font-size: 2vw;
+  font-weight: 800;
+  color: rgb(95, 181, 231);
+  text-shadow: rgb(0, 0, 0);
+}
+
+.timestamp {
+  color: black;
 }
