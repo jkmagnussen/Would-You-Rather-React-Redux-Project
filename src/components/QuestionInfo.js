@@ -111,11 +111,10 @@ class QuestionInfo extends React.Component {
 function mapStateToProps(state, { id }) {
   return {
     question: state.question[id],
-    //id: state.question[id].id,
     userIds: state.question.author,
     auth: state.authUser,
     total:
-      state.question[id].optionOne.votes.length +
+      state.saveQuestionAnswer[id].optionOne.votes.length +
       state.question[id].optionTwo.votes.length,
     optionOneVotes: state.question[id].optionOne.votes.length,
     optionTwoVotes: state.question[id].optionTwo.votes.length,

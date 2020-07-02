@@ -9,6 +9,7 @@ import Question from "./Question";
 import Logout from "./Logout";
 import Login from "./Login";
 import ErrorPage from "./ErrorPage";
+import QuestionInfo from "./QuestionInfo";
 
 function Routes(props) {
   return (
@@ -21,7 +22,7 @@ function Routes(props) {
             <Route path="/" exact component={Dashboard} />
             <Route path="/leaderboard" exact component={Leaderboard} />
             <Route path="/add" component={CreateQuestion} />
-            <Route path="/questions/:id" component={Question} />
+            <Route path="/questions/:id" component={QuestionInfo} />
             <Route exact path="/logout" component={Logout} />
           </Fragment>
         )}
