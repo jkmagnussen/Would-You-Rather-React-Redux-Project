@@ -3,7 +3,7 @@ let users = {
     id: "sarahedo",
     name: "Sarah Edo",
     avatarURL:
-      "https://cdn.onebauer.media/one/media/5e4f/e696/a5ac/a902/d990/ba38/game-of-thrones-tormund.jpg?quality=50&width=1800&ratio=16-9&resizeStyle=aspectfill&format=jpg",
+      "https://pbs.twimg.com/profile_images/732087375786999808/Ua3m5sd8_400x400.jpg",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionTwo",
@@ -16,7 +16,7 @@ let users = {
     id: "tylermcginnis",
     name: "Tyler McGinnis",
     avatarURL:
-      "https://cdn.onebauer.media/one/media/5e4f/e696/a5ac/a902/d990/ba38/game-of-thrones-tormund.jpg?quality=50&width=1800&ratio=16-9&resizeStyle=aspectfill&format=jpg",
+      "https://pbs.twimg.com/profile_images/732087375786999808/Ua3m5sd8_400x400.jpg",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
       xj352vofupe1dqz9emx13r: "optionTwo",
@@ -27,7 +27,7 @@ let users = {
     id: "johndoe",
     name: "John Doe",
     avatarURL:
-      "https://cdn.onebauer.media/one/media/5e4f/e696/a5ac/a902/d990/ba38/game-of-thrones-tormund.jpg?quality=50&width=1800&ratio=16-9&resizeStyle=aspectfill&format=jpg",
+      "https://pbs.twimg.com/profile_images/732087375786999808/Ua3m5sd8_400x400.jpg",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",

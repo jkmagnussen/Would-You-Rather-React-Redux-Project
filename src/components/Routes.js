@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import Dashboard from "./Dashboard";
 import Leaderboard from "./Leaderboard";
 import CreateQuestion from "./CreateQuestion";
-import Question from "./Question";
 import Logout from "./Logout";
 import Login from "./Login";
 import ErrorPage from "./ErrorPage";

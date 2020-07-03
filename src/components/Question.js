@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { handleGetInitialData, handleSaveAnswer } from "../actions/shared";
-import outline from "./Media/outline.png";
 import { Link } from "react-router-dom";
 
 class QuestionInfo extends React.Component {
@@ -28,11 +27,11 @@ class QuestionInfo extends React.Component {
   }
 
   render() {
-    const { question, id } = this.props;
+    const { question, Pic } = this.props;
 
     return (
       <div className="questionBox">
-        <img src={outline} />
+        <img className="imgPic" src={Pic} />
         <div className="total">
           {" "}
           {this.props.total > 1 ? (
@@ -66,7 +65,7 @@ class QuestionInfo extends React.Component {
               (Number(this.props.optionOneVotes) / Number(this.props.total)) *
                 100
             ) > 0
-              ? `(${Math.round(
+              ? ` (${Math.round(
                   (Number(this.props.optionOneVotes) /
                     Number(this.props.total)) *
                     100
@@ -109,9 +108,19 @@ class QuestionInfo extends React.Component {
 }
 
 function mapStateToProps(state, { id }) {
+  const answers = state.users[state.authUser].answers;
+
+  const question = state.question[id];
+  const user = state.users[question.author];
+  let answer;
+  if (answers.hasOwnProperty(question.id)) {
+    answer = answers[question.id];
+  }
   return {
     question: state.question[id],
-    //id: state.question[id].id,
+
+    answer,
+
     userIds: state.question.author,
     auth: state.authUser,
     total:
@@ -119,15 +128,14 @@ function mapStateToProps(state, { id }) {
       state.question[id].optionTwo.votes.length,
     optionOneVotes: state.question[id].optionOne.votes.length,
     optionTwoVotes: state.question[id].optionTwo.votes.length,
+    Pic: user.avatarURL,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    saveQuestionAnswer: (response) => {
-      dispatch(
-        handleSaveAnswer(this.props.auth, this.props.question, response)
-      );
+    saveQuestionAnswer: (answer) => {
+      dispatch(handleSaveAnswer(answer));
     },
     handleGetInitialData: () => {
       dispatch(handleGetInitialData());

@@ -23,7 +23,13 @@ class Navbar extends React.Component {
       <nav className="navWrap">
         <ul className="nav">
           <li className="navItems">
-            <NavLink className="navTab" to="/" exact activeClassName="active">
+            <NavLink
+              activeClassName="active"
+              className="navTab"
+              to="/"
+              exact
+              activeClassName="active"
+            >
               Home
             </NavLink>
           </li>

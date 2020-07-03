@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { handleGetInitialData, handleSaveAnswer } from "../actions/shared";
-import outline from "./Media/outline.png";
-import { Link } from "react-router-dom";
+import back from "./Media/back.png";
+import Navbar from "./Navbar";
+import { withRouter } from "react-router";
 
 class QuestionInfo extends React.Component {
   constructor(props) {
@@ -28,105 +29,157 @@ class QuestionInfo extends React.Component {
   }
 
   render() {
-    const { question, id } = this.props;
+    const { question } = this.props;
 
     return (
-      <div className="questionBox">
-        <img src={outline} />
-        <div className="total">
-          {" "}
-          {this.props.total > 1 ? (
-            <p>{this.props.total} votes</p>
-          ) : (
-            <p> {this.props.total} vote</p>
-          )}
-        </div>
-        <Link to={`/questions/${question.id}`}>
+      <div>
+        {" "}
+        <Navbar />
+        <div className="questionBox">
+          <img className="imgPic" src={this.props.Pic} />
+
+          <div className="total">
+            {" "}
+            {this.props.total > 1 ? (
+              <p>{this.props.total} votes</p>
+            ) : (
+              <p> {this.props.total} vote</p>
+            )}
+          </div>
+
+          <img className="backBtn" src={back} />
+
           <p className="qTitle">@{question.author} asks</p>
           <p className="timestamp">
             {new Date(Number(question.timestamp) * 1000).toLocaleString()}
           </p>
-        </Link>
-        <h2 className="questionSubtitle">Would You Rather</h2>
-        <div className="buttonAndVote">
-          <button
-            onClick={this.handleSubmit}
-            onChange={this.selected}
-            value="optionOne"
-            className="questionBtn"
-            style={{
-              backgroundColor:
-                this.props.optionOneVotes > this.props.optionTwoVotes
-                  ? "#62c74e"
-                  : "#f55442",
-            }}
-          >
-            {question.optionOne.text}
-            {Math.round(
-              (Number(this.props.optionOneVotes) / Number(this.props.total)) *
-                100
-            ) > 0
-              ? `(${Math.round(
-                  (Number(this.props.optionOneVotes) /
-                    Number(this.props.total)) *
-                    100
-                )}%)`
-              : null}
-          </button>
-        </div>
 
-        <div className="buttonAndVote">
-          {" "}
-          <button
-            onClick={this.handleSubmit}
-            onChange={this.selected}
-            value="optionTwo"
-            className="questionBtn"
-            style={{
-              backgroundColor:
-                this.props.optionTwoVotes > this.props.optionOneVotes
-                  ? "#62c74e"
-                  : "#f55442",
-            }}
-          >
-            {question.optionTwo.text}
+          <h2 className="questionSubtitle">Would You Rather</h2>
+          <div className="buttonAndVote">
+            <button
+              onClick={this.handleSubmit}
+              onChange={this.selected}
+              value="optionOne"
+              className="questionBtn"
+              style={{
+                backgroundColor:
+                  this.props.lenOne > this.props.lenTwo ? "#62c74e" : "#f55442",
+              }}
+            >
+              {question.optionOne.text}
+              {Math.round(
+                (Number(this.props.optionOneVotes) / Number(this.props.total)) *
+                  100
+              ) > 0
+                ? ` (${Math.round(
+                    (Number(this.props.optionOneVotes) /
+                      Number(this.props.total)) *
+                      100
+                  )}%)`
+                : null}
+            </button>
+          </div>
 
-            {Math.round(
-              (Number(this.props.optionTwoVotes) / Number(this.props.total)) *
-                100
-            ) > 0
-              ? ` (${Math.round(
-                  (Number(this.props.optionTwoVotes) /
-                    Number(this.props.total)) *
-                    100
-                )}%)`
-              : null}
-          </button>
+          <div className="buttonAndVote">
+            {" "}
+            <button
+              onClick={this.handleSubmit}
+              onChange={this.selected}
+              value="optionTwo"
+              className="questionBtn"
+              style={{
+                backgroundColor:
+                  this.props.lenTwo > this.props.lenOne ? "#62c74e" : "#f55442",
+              }}
+            >
+              {question.optionTwo.text}
+
+              {Math.round(
+                (Number(this.props.optionTwoVotes) / Number(this.props.total)) *
+                  100
+              ) > 0
+                ? ` (${Math.round(
+                    (Number(this.props.optionTwoVotes) /
+                      Number(this.props.total)) *
+                      100
+                  )}%)`
+                : null}
+            </button>
+          </div>
+          <h2 className="voters">Activity</h2>
+          <ul className="voterList">
+            {this.props.optionOne.map((info) => (
+              <li
+                style={{
+                  color:
+                    this.props.lenOne > this.props.lenTwo
+                      ? "#62c74e"
+                      : "#f55442",
+                }}
+              >
+                {info} voted: {question.optionOne.text}
+              </li>
+            ))}
+          </ul>
+          <ul className="voterList">
+            {this.props.optionTwo.map((info) => (
+              <li
+                style={{
+                  color:
+                    this.props.lenTwo > this.props.lenOne
+                      ? "#62c74e"
+                      : "#f55442",
+                }}
+              >
+                {info} voted: {question.optionTwo.text}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps(state, { id }) {
+function mapStateToProps({ question, users, authUser }, { match }) {
+  const { id } = match.params;
+  const q = question[id];
+  const user = users[question.author];
+  const total = Number.parseFloat(
+    question[id].optionOne.votes.length + question[id].optionTwo.votes.length
+  );
+  const optionOne = question[id].optionOne.votes;
+  const optionTwo = question[id].optionTwo.votes;
+  const lenOne = question[id].optionOne.votes.length;
+  const lenTwo = question[id].optionTwo.votes.length;
+
+  const ques = question[id];
+  const userz = users[ques.author];
+
   return {
-    question: state.question[id],
-    userIds: state.question.author,
-    auth: state.authUser,
-    total:
-      state.saveQuestionAnswer[id].optionOne.votes.length +
-      state.question[id].optionTwo.votes.length,
-    optionOneVotes: state.question[id].optionOne.votes.length,
-    optionTwoVotes: state.question[id].optionTwo.votes.length,
+    user,
+    total,
+    question: q,
+    authUser,
+
+    answers: users[authUser].answers[id],
+    Pic: userz.avatarURL,
+    optionOne,
+    optionTwo,
+    lenOne,
+    lenTwo,
+    totalPercent:
+      question[id].optionOne.votes.length + question[id].optionTwo.votes.length,
+    optionOneVotes: question[id].optionOne.votes.length,
+    optionTwoVotes: question[id].optionTwo.votes.length,
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, props) {
+  const { id } = props.match.params;
   return {
-    saveQuestionAnswer: (response) => {
-      dispatch(
-        handleSaveAnswer(this.props.auth, this.props.question, response)
-      );
+    saveQuestionAnswer: (answer) => {
+      dispatch(handleSaveAnswer(id, answer));
     },
     handleGetInitialData: () => {
       dispatch(handleGetInitialData());

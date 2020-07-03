@@ -49,6 +49,10 @@ a {
   text-align: center;
 }
 
+.active {
+  color: rgb(95, 181, 231);
+}
+
 .navItems {
   text-align: center;
   margin: auto;
@@ -188,4 +192,58 @@ ul {
 
 .timestamp {
   color: black;
+}
+
+.imgPic {
+  width: 40%;
+  height: 40%;
+  border-radius: 250px;
+  margin-top: 4%;
+}
+
+.voterList {
+  font-weight: 800;
+  font-size: 2vw;
+  list-style-type: none;
+  padding-bottom: 2%;
+  margin: auto;
+  margin-left: -20px;
+  -webkit-text-stroke: 0.4px black;
+}
+
+.voters {
+  color: gray;
+  font-family: Galada;
+}
+
+.backBtn {
+  width: 4vw;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.avatar {
+  width: 50%;
+}
+
+.leaderBox {
+  background-color: white;
+  opacity: 0.6;
+  width: 100vw;
+  display: inline-block;
+}
+
+.emoji {
+  font-size: 300%;
+}
+
+.leaderName {
+  font-family: Galada;
+  color: rgb(82, 82, 82);
+  font-size: 300%;
+  width: 100%;
+}
+
+.titleL {
+  margin-top: 500px;
 }
