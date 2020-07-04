@@ -34,7 +34,7 @@ class Navbar extends React.Component {
             </NavLink>
           </li>
           <li className="navItems">
-            <NavLink to="/new" activeClassName="active">
+            <NavLink to="/add" activeClassName="active">
               Create
             </NavLink>
           </li>
