@@ -11,14 +11,17 @@ import {
   saveQuestionAnswer,
 } from "./actionQuestions";
 
-import { recieveUsers } from "./actionUsers";
+import { recieveUsers, saveUserAnswer } from "./actionUsers";
 
 import { showLoading, hideLoading } from "react-redux-loading";
 
 export function handleSaveAnswer(qid, answer) {
   return (dispatch, getState) => {
     const { authUser } = getState();
-    _saveQuestionAnswer({ authedUser: authUser, qid, answer }).then(() => {});
+    _saveQuestionAnswer({ authedUser: authUser, qid, answer }).then(() => {
+      dispatch(saveQuestionAnswer(authUser, qid, answer));
+      dispatch(saveUserAnswer(authUser, qid, answer));
+    });
   };
 }
 

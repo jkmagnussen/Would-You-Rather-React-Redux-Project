@@ -6,19 +6,11 @@ import { Link } from "react-router-dom";
 class QuestionInfo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      choice: "",
-    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     this.props.handleGetInitialData();
-  }
-
-  selected(event) {
-    this.setState({
-      choice: event.target.value,
-    });
   }
 
   handleSubmit(event, option) {
@@ -136,7 +128,7 @@ function mapStateToProps(state, { id }) {
 function mapDispatchToProps(dispatch) {
   return {
     saveQuestionAnswer: (answer, id) => {
-      dispatch(handleSaveAnswer(answer, id));
+      dispatch(handleSaveAnswer(id, answer));
     },
     handleGetInitialData: () => {
       dispatch(handleGetInitialData());

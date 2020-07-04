@@ -7,10 +7,11 @@ export function recieveUsers(users) {
   };
 }
 
-export function answeredQuestion(questionIds, authUser) {
+export function saveUserAnswer(authUser, qid, answer) {
   return {
     type: ANSWERED_QUESTION,
-    questionIds,
     authUser,
+    qid,
+    option: answer,
   };
 }
