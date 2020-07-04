@@ -247,3 +247,21 @@ ul {
 .titleL {
   margin-top: 500px;
 }
+
+.create {
+  text-align: center;
+  display: flex;
+}
+
+.input {
+  width: 30vw;
+
+  display: flex;
+}
+
+.submitCreate {
+  font-size: 30px;
+  opacity: 0.6;
+  border-radius: 10px;
+  color: rgb(34, 34, 34);
+}

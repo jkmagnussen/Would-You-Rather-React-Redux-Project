@@ -17,8 +17,8 @@ import { showLoading, hideLoading } from "react-redux-loading";
 
 export function handleSaveAnswer(qid, answer) {
   return (dispatch, getState) => {
-    const { authedUser } = getState();
-    _saveQuestionAnswer(authedUser, qid, answer).then(() => {});
+    const { authUser } = getState();
+    _saveQuestionAnswer({ authedUser: authUser, qid, answer }).then(() => {});
   };
 }
 

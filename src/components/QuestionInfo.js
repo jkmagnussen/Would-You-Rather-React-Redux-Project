@@ -17,14 +17,9 @@ class QuestionInfo extends React.Component {
     this.props.handleGetInitialData();
   }
 
-  selected(event) {
-    this.setState({
-      choice: event.target.value,
-    });
-  }
-
-  handleSubmit(event) {
+  handleSubmit(event, option) {
     event.preventDefault();
+
     this.props.saveQuestionAnswer(this.state.choice);
   }
 
@@ -57,8 +52,7 @@ class QuestionInfo extends React.Component {
           <h2 className="questionSubtitle">Would You Rather</h2>
           <div className="buttonAndVote">
             <button
-              onClick={this.handleSubmit}
-              onChange={this.selected}
+              onClick={(e) => this.handleSubmit(e, "optionOne")}
               value="optionOne"
               className="questionBtn"
               style={{
@@ -83,8 +77,7 @@ class QuestionInfo extends React.Component {
           <div className="buttonAndVote">
             {" "}
             <button
-              onClick={this.handleSubmit}
-              onChange={this.selected}
+              onClick={(e) => this.handleSubmit(e, "optionTwo")}
               value="optionTwo"
               className="questionBtn"
               style={{

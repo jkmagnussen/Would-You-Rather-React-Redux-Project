@@ -21,9 +21,10 @@ class QuestionInfo extends React.Component {
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit(event, option) {
+    const { question } = this.props;
     event.preventDefault();
-    this.props.saveQuestionAnswer(this.state.choice);
+    this.props.saveQuestionAnswer(option, question.id);
   }
 
   render() {
@@ -49,7 +50,7 @@ class QuestionInfo extends React.Component {
         <h2 className="questionSubtitle">Would You Rather</h2>
         <div className="buttonAndVote">
           <button
-            onClick={this.handleSubmit}
+            onClick={(e) => this.handleSubmit(e, "optionOne")}
             onChange={this.selected}
             value="optionOne"
             className="questionBtn"
@@ -77,7 +78,7 @@ class QuestionInfo extends React.Component {
         <div className="buttonAndVote">
           {" "}
           <button
-            onClick={this.handleSubmit}
+            onClick={(e) => this.handleSubmit(e, "optionTwo")}
             onChange={this.selected}
             value="optionTwo"
             className="questionBtn"
@@ -134,8 +135,8 @@ function mapStateToProps(state, { id }) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    saveQuestionAnswer: (answer) => {
-      dispatch(handleSaveAnswer(answer));
+    saveQuestionAnswer: (answer, id) => {
+      dispatch(handleSaveAnswer(answer, id));
     },
     handleGetInitialData: () => {
       dispatch(handleGetInitialData());

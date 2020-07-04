@@ -36,9 +36,9 @@ class CreateQuestion extends React.Component {
     return (
       <div>
         <Navbar />
-        <h1>hello</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form className="create" onSubmit={this.handleSubmit}>
           <input
+            className="input"
             type="text"
             name="optionOne"
             value={this.props.optionOne}
@@ -46,13 +46,14 @@ class CreateQuestion extends React.Component {
             placeholder="Option One"
           ></input>
           <input
+            className="input"
             type="text"
             name="optionTwo"
             value={this.props.optionTwo}
             onChange={this.handleOptionTwoChange}
             placeholder="Option Two"
           ></input>
-          <button>Submit</button>
+          <button className="submitCreate">Submit</button>
         </form>
       </div>
     );
