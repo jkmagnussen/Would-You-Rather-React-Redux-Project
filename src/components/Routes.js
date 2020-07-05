@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Dashboard from "./Dashboard";
 import Leaderboard from "./Leaderboard";
 import CreateQuestion from "./CreateQuestion";
-import Logout from "./Logout";
+
 import Login from "./Login";
 import ErrorPage from "./ErrorPage";
 import QuestionInfo from "./QuestionInfo";
@@ -22,7 +22,6 @@ function Routes(props) {
             <Route path="/leaderboard" exact component={Leaderboard} />
             <Route path="/add" component={CreateQuestion} />
             <Route path="/questions/:id" component={QuestionInfo} />
-            <Route exact path="/logout" component={Logout} />
           </Fragment>
         )}
         <Route component={ErrorPage} />

@@ -19,11 +19,23 @@ class Leaderboard extends React.Component {
 
   setPosition(status) {
     if (status === 1) {
-      return <div className="emoji">&#x1f947;</div>;
+      return (
+        <div className="emoji">
+          <span role="img">&#x1f947;</span>
+        </div>
+      );
     } else if (status === 2) {
-      return <div className="emoji">&#x1F948;</div>;
+      return (
+        <div className="emoji">
+          <span role="img">&#x1F948;</span>
+        </div>
+      );
     } else {
-      return <div className="emoji">&#x1F949;</div>;
+      return (
+        <div className="emoji">
+          <span role="img">&#x1F949;</span>
+        </div>
+      );
     }
   }
 

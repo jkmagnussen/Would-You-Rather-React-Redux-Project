@@ -3,13 +3,10 @@ import { connect } from "react-redux";
 
 class ErrorPage extends React.Component {
   render() {
-    const { id, replies } = this.props;
-    return <div>aeee</div>;
+    return <div></div>;
   }
 }
 
-function mapStateToProps({ authedUser, tweets, users }, props) {
-  const { id } = props.match.params;
-}
+function mapStateToProps({ authedUser, tweets, users }, props) {}
 
 export default connect(mapStateToProps)(ErrorPage);

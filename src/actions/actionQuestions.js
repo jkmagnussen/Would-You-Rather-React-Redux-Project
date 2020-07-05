@@ -30,11 +30,11 @@ export function recieveQuestions(question, qid) {
   };
 }
 
-export function saveQuestionAnswer({ qid, authedUser, hasVoted }) {
+export function saveQuestionAnswer(authUser, qid, answer) {
   return {
     type: TOGGLE_VOTE,
     qid,
-    authedUser,
-    hasVoted,
+    authUser,
+    answer,
   };
 }

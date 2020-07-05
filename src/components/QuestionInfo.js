@@ -31,7 +31,7 @@ class QuestionInfo extends React.Component {
         {" "}
         <Navbar />
         <div className="questionBox">
-          <img className="imgPic" src={this.props.Pic} />
+          <img className="imgPic" alt="img" src={this.props.Pic} />
 
           <div className="total">
             {" "}
@@ -42,7 +42,12 @@ class QuestionInfo extends React.Component {
             )}
           </div>
 
-          <img className="backBtn" src={back} />
+          <img
+            alt="img2"
+            className="backBtn"
+            onClick={this.props.history.goBack}
+            src={back}
+          />
 
           <p className="qTitle">@{question.author} asks</p>
           <p className="timestamp">
@@ -99,6 +104,8 @@ class QuestionInfo extends React.Component {
                 : null}
             </button>
           </div>
+          <p>{`${question.optionOne.text} total votes: ${question.optionOne.votes.length}`}</p>
+          <p>{`${question.optionTwo.text} total votes: ${question.optionTwo.votes.length}`}</p>
           <h2 className="voters">Activity</h2>
           <ul className="voterList">
             {this.props.optionOne.map((info) => (
@@ -180,4 +187,6 @@ function mapDispatchToProps(dispatch, props) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionInfo);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(QuestionInfo)
+);

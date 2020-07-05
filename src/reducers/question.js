@@ -12,16 +12,15 @@ export default function question(state = {}, action) {
         ...action.question,
       };
     case TOGGLE_VOTE:
+      const { authedUser, qid, answer } = action;
       return {
         ...state,
-        [action.qid]: {
-          ...state[action.qid],
-          answers:
-            action.hasVoted === true
-              ? state[action.id].answers.filter(
-                  (uid) => uid !== action.authedUser
-                )
-              : state[action.id].answers.concat([action.authedUser]),
+        [qid]: {
+          ...state[qid],
+          [answer]: {
+            ...state[qid][answer],
+            votes: state[qid][answer].votes.concat([authedUser]),
+          },
         },
       };
     case CREATE_QUESTION:

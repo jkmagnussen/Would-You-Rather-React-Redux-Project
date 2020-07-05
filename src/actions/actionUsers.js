@@ -10,7 +10,7 @@ export function recieveUsers(users) {
 export function saveUserAnswer(authUser, qid, answer) {
   return {
     type: ANSWERED_QUESTION,
-    authUser,
+    auth: authUser,
     qid,
     option: answer,
   };

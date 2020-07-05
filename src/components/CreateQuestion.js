@@ -32,29 +32,31 @@ class CreateQuestion extends React.Component {
   };
 
   render() {
-    const { user } = this.props;
     return (
-      <div>
+      <div className="question">
         <Navbar />
-        <form className="create" onSubmit={this.handleSubmit}>
-          <input
-            className="input"
-            type="text"
-            name="optionOne"
-            value={this.props.optionOne}
-            onChange={this.handleOptionOneChange}
-            placeholder="Option One"
-          ></input>
-          <input
-            className="input"
-            type="text"
-            name="optionTwo"
-            value={this.props.optionTwo}
-            onChange={this.handleOptionTwoChange}
-            placeholder="Option Two"
-          ></input>
-          <button className="submitCreate">Submit</button>
-        </form>
+        <div className="questionBox">
+          <form className="create" onSubmit={this.handleSubmit}>
+            <h2 className="questionSubtitle">Would You Rather</h2>
+            <input
+              className="input"
+              type="text"
+              name="optionOne"
+              value={this.props.optionOne}
+              onChange={this.handleOptionOneChange}
+              placeholder="Option One"
+            ></input>
+            <input
+              className="input"
+              type="text"
+              name="optionTwo"
+              value={this.props.optionTwo}
+              onChange={this.handleOptionTwoChange}
+              placeholder="Option Two"
+            ></input>
+            <button className="submitCreate">Submit</button>
+          </form>
+        </div>
       </div>
     );
   }
