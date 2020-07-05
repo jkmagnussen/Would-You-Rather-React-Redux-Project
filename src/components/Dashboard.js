@@ -31,8 +31,8 @@ class Dashboard extends React.Component {
         <Navbar />
         <Tabs>
           <TabList style={{ textAlign: "center", fontSize: "40px" }}>
-            <Tab>Unread</Tab>
-            <Tab>Read</Tab>
+            <Tab>Unanswered</Tab>
+            <Tab>Answered</Tab>
           </TabList>
 
           <TabPanel>

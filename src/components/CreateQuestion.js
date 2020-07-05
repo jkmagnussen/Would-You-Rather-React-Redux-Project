@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { handleAddQuestion } from "../actions/shared";
 import Navbar from "./Navbar";
+import { Redirect } from "react-router-dom";
 
 class CreateQuestion extends React.Component {
   state = {
@@ -32,6 +33,9 @@ class CreateQuestion extends React.Component {
   };
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="question">
         <Navbar />

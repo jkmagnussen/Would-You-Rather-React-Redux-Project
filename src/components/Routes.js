@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -13,13 +13,11 @@ function Routes(props) {
   return (
     <div className="container">
       <Switch>
-        <Fragment>
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/leaderboard" exact component={Leaderboard} />
-          <Route path="/add" component={CreateQuestion} />
-          <Route path="/questions/:id" component={QuestionInfo} />
-        </Fragment>
-        <Route path="." component={ErrorPage} />
+        <Route path="/" exact component={Dashboard} />
+        <Route path="/leaderboard" exact component={Leaderboard} />
+        <Route path="/add" exact component={CreateQuestion} />
+        <Route path="/questions/:id" exact component={QuestionInfo} />
+        <Route path="*" exact component={ErrorPage} />
       </Switch>
     </div>
   );

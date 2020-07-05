@@ -276,3 +276,10 @@ li#tab1 button {
   font-size: 20px;
   text-align: "center";
 }
+
+.errorImage {
+  margin: auto;
+  align-content: center;
+  text-align: center;
+  width: 100vw;
+}
