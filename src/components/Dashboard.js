@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { handleGetInitialData } from "../actions/shared";
-import { Tabs } from "@feuer/react-tabs";
+import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 import Question from "./Question";
 
@@ -23,43 +24,33 @@ class Dashboard extends React.Component {
   componentDidMount() {
     this.props.handleGetInitialData();
   }
+
   render() {
     return (
       <div className="react-tabs">
         <Navbar />
-        <Tabs
-          tabsProps={{
-            style: {
-              textAlign: "center",
-              fontSize: 80,
-            },
-          }}
-          activeTab={{
-            id: "tab1",
-          }}
-        >
-          <Tabs.Tab
-            style={{
-              fontSize: 50,
-            }}
-            className="tab1"
-            id="tab1"
-            title="Unread"
-          >
+        <Tabs>
+          <TabList style={{ textAlign: "center", fontSize: "40px" }}>
+            <Tab>Unread</Tab>
+            <Tab>Read</Tab>
+          </TabList>
+
+          <TabPanel>
+            {" "}
             <div style={{ padding: 10 }}>
               {this.props.unansweredQuestions.map((qid) => (
-                <Question id={qid} pic={this.props.userPics} />
+                <Question key={qid} id={qid} pic={this.props.userPics} />
               ))}
             </div>
-          </Tabs.Tab>
-          <Tabs.Tab className="tab2" id="tab2" title="Read">
-            <div style={{ padding: 10 }}>
-              {" "}
+          </TabPanel>
+          <TabPanel>
+            {" "}
+            <div>
               {this.props.commented.map((qid) => (
-                <Question id={qid} pic={this.props.userPics} />
+                <Question key={qid} id={qid} pic={this.props.userPics} />
               ))}
             </div>
-          </Tabs.Tab>
+          </TabPanel>
         </Tabs>
       </div>
     );

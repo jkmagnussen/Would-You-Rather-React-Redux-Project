@@ -6,7 +6,6 @@ import Dashboard from "./Dashboard";
 import Leaderboard from "./Leaderboard";
 import CreateQuestion from "./CreateQuestion";
 
-import Login from "./Login";
 import ErrorPage from "./ErrorPage";
 import QuestionInfo from "./QuestionInfo";
 
@@ -14,17 +13,13 @@ function Routes(props) {
   return (
     <div className="container">
       <Switch>
-        {props.notLoggedOn ? (
-          <Route path="/" exact component={Login} />
-        ) : (
-          <Fragment>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/leaderboard" exact component={Leaderboard} />
-            <Route path="/add" component={CreateQuestion} />
-            <Route path="/questions/:id" component={QuestionInfo} />
-          </Fragment>
-        )}
-        <Route component={ErrorPage} />
+        <Fragment>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/leaderboard" exact component={Leaderboard} />
+          <Route path="/add" component={CreateQuestion} />
+          <Route path="/questions/:id" component={QuestionInfo} />
+        </Fragment>
+        <Route path="." component={ErrorPage} />
       </Switch>
     </div>
   );

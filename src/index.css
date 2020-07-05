@@ -240,12 +240,9 @@ ul {
 .leaderName {
   font-family: Galada;
   color: rgb(82, 82, 82);
-  font-size: 300%;
+  font-size: 30px;
   width: 100%;
-}
-
-.titleL {
-  margin-top: 500px;
+  height: 100%;
 }
 
 .create {
@@ -272,4 +269,10 @@ ul {
 
   border-radius: 10px;
   color: rgb(32, 32, 32);
+}
+
+li#tab1 button {
+  color: white !important;
+  font-size: 20px;
+  text-align: "center";
 }

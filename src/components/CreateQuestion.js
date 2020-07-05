@@ -42,7 +42,7 @@ class CreateQuestion extends React.Component {
               className="input"
               type="text"
               name="optionOne"
-              value={this.props.optionOne}
+              value={this.state.optionOne}
               onChange={this.handleOptionOneChange}
               placeholder="Option One"
             ></input>
@@ -50,7 +50,7 @@ class CreateQuestion extends React.Component {
               className="input"
               type="text"
               name="optionTwo"
-              value={this.props.optionTwo}
+              value={this.state.optionTwo}
               onChange={this.handleOptionTwoChange}
               placeholder="Option Two"
             ></input>

@@ -21,19 +21,25 @@ class Leaderboard extends React.Component {
     if (status === 1) {
       return (
         <div className="emoji">
-          <span role="img">&#x1f947;</span>
+          <span aria-label="abc" role="img">
+            &#x1f947;
+          </span>
         </div>
       );
     } else if (status === 2) {
       return (
         <div className="emoji">
-          <span role="img">&#x1F948;</span>
+          <span aria-label="abc" role="img">
+            &#x1F948;
+          </span>
         </div>
       );
     } else {
       return (
         <div className="emoji">
-          <span role="img">&#x1F949;</span>
+          <span aria-label="abc" role="img">
+            &#x1F949;
+          </span>
         </div>
       );
     }
@@ -45,8 +51,8 @@ class Leaderboard extends React.Component {
       <div>
         <Navbar />
         {users.map((user, index) => (
-          <div className="questionBox">
-            <div key={user.id}>
+          <div className="questionBox" key={user.id}>
+            <div>
               <img
                 src={user.avatarURL}
                 className="imgPic"
@@ -54,7 +60,7 @@ class Leaderboard extends React.Component {
               />
               <div className="leaderName">
                 {this.setPosition(index + 1)}
-                <div classname="titleL">{user.name}</div>
+                <div className="titleL">{user.name}</div>
               </div>
               <h2>Questions Asked: {user.questions.length}</h2>
               <h2>Voted on: {Object.keys(user.answers).length}</h2>

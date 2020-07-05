@@ -23,13 +23,7 @@ class Navbar extends React.Component {
       <nav className="navWrap">
         <ul className="nav">
           <li className="navItems">
-            <NavLink
-              activeClassName="active"
-              className="navTab"
-              to="/"
-              exact
-              activeClassName="active"
-            >
+            <NavLink activeClassName="active" className="navTab" to="/" exact>
               Home
             </NavLink>
           </li>
@@ -50,7 +44,7 @@ class Navbar extends React.Component {
           <li className="loggedAs">
             {this.props.user}
             {this.props.user === this.props.users.id ? (
-              <img src={this.props.users.avatarURL} />
+              <img alt="avaratImage" src={this.props.users.avatarURL} />
             ) : null}
             <button className="logoutBtn" onClick={this.handleSubmit}>
               Logout

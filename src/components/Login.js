@@ -40,7 +40,7 @@ class Login extends React.Component {
         <br />
         <select
           className="selectLogin"
-          value={this.state.selectedId}
+          value={this.state.selectedId ? this.state.selectedId : ""}
           onChange={this.handleSelectUser}
         >
           <option>Select a username</option>

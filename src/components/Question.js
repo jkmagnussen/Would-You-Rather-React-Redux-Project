@@ -14,9 +14,13 @@ class QuestionInfo extends React.Component {
   }
 
   handleSubmit(event, option) {
-    const { question } = this.props;
-    event.preventDefault();
-    this.props.saveQuestionAnswer(option, question.id);
+    if (!this.props.answer) {
+      const { question } = this.props;
+      event.preventDefault();
+      this.props.saveQuestionAnswer(option, question.id);
+    } else {
+      window.alert("Answer already given");
+    }
   }
 
   render() {
@@ -24,7 +28,7 @@ class QuestionInfo extends React.Component {
 
     return (
       <div className="questionBox">
-        <img className="imgPic" src={Pic} />
+        <img alt="pic" className="imgPic" src={Pic} />
         <div className="total">
           {" "}
           {this.props.total > 1 ? (

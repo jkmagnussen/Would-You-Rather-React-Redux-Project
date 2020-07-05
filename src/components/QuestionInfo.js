@@ -8,9 +8,7 @@ import { withRouter } from "react-router";
 class QuestionInfo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      choice: "",
-    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
@@ -20,7 +18,7 @@ class QuestionInfo extends React.Component {
   handleSubmit(event, option) {
     event.preventDefault();
 
-    this.props.saveQuestionAnswer(this.state.choice);
+    this.props.saveQuestionAnswer(option);
   }
 
   render() {
@@ -108,8 +106,9 @@ class QuestionInfo extends React.Component {
           <p>{`${question.optionTwo.text} total votes: ${question.optionTwo.votes.length}`}</p>
           <h2 className="voters">Activity</h2>
           <ul className="voterList">
-            {this.props.optionOne.map((info) => (
+            {this.props.optionOne.map((info, i) => (
               <li
+                key={i}
                 style={{
                   color:
                     this.props.lenOne > this.props.lenTwo
@@ -122,8 +121,9 @@ class QuestionInfo extends React.Component {
             ))}
           </ul>
           <ul className="voterList">
-            {this.props.optionTwo.map((info) => (
+            {this.props.optionTwo.map((info, i) => (
               <li
+                key={i}
                 style={{
                   color:
                     this.props.lenTwo > this.props.lenOne

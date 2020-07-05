@@ -5,15 +5,21 @@ import { handleGetInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading";
 import "../index.css";
 import Routes from "./Routes";
-
-import Navbar from "./Navbar";
 import Footer from "./Footer/ExternalFooter/Footer";
+import Login from "./Login";
 
 class App extends Component {
   componentDidMount() {
     this.props.handleGetInitialData();
   }
   render() {
+    let content;
+    if (this.props.notLoggedOn) {
+      content = <Login />;
+    } else {
+      content = <Routes />;
+    }
+
     return (
       <div className="container">
         <Router>
@@ -25,9 +31,7 @@ class App extends Component {
                 You Rather
               </h1>
 
-              {this.props.notLoggedOn !== null ? null : <Navbar />}
-
-              <Routes notLoggedOn={this.props.notLoggedOn} />
+              {content}
             </div>
             <Footer />
           </Fragment>
