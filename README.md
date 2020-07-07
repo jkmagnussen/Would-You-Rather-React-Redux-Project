@@ -2,7 +2,7 @@ Project instructions:
 
 It's built with React, Redux, React Router, & Redux Thunk.
 
-To install and launch this project:
+To install & launch this project:
 
 1. git clone https://github.com/jkmagnussen/Would-Yoy-Rather--React-Redux-Project.git
 
