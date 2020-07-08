@@ -17,7 +17,7 @@ function Routes(props) {
         <Route path="/leaderboard" exact component={Leaderboard} />
         <Route path="/add" exact component={CreateQuestion} />
         <Route path="/questions/:id" exact component={QuestionInfo} />
-        <Route path="*" exact component={ErrorPage} />
+        <Route exact component={ErrorPage} />
       </Switch>
     </div>
   );
