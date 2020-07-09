@@ -1,4 +1,4 @@
-Project instructionss:
+Project instructions:
 
 It's built with React, Redux, React Router, & Redux Thunk.
 
