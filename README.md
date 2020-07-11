@@ -1,6 +1,8 @@
 Project instruction:
 
-It's built with React, Redux, React Router, & Redux Thunk.
+Application composition:
+
+React, Redux, React Router, & Redux Thunk.
 
 To install & launch this project:
 
