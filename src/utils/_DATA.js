@@ -3,7 +3,7 @@ let users = {
     id: "sarahedo",
     name: "Sarah Edo",
     avatarURL:
-      "https://pbs.twimg.com/profile_images/732087375786999808/Ua3m5sd8_400x400.jpg",
+      "https://pbs.twimg.com/profile_images/1009469376490192896/hW_ZFLHm.jpg",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionTwo",
@@ -27,7 +27,7 @@ let users = {
     id: "johndoe",
     name: "John Doe",
     avatarURL:
-      "https://pbs.twimg.com/profile_images/732087375786999808/Ua3m5sd8_400x400.jpg",
+      "https://www.cleveland.com/resizer/za1NQ0xd7e3IvuyHgR4e-RiH6m8=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.cleveland.com/home/cleve-media/width2048/img/ent_impact_home/photo/joey-diazjpeg-972f797c791758a2.jpeg",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",
