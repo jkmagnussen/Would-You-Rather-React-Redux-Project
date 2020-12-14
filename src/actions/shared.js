@@ -3,6 +3,7 @@ import {
   _getQuestions,
   _saveQuestionAnswer,
   _saveQuestion,
+  _saveUser
 } from "../utils/_DATA";
 
 import {
@@ -11,9 +12,16 @@ import {
   saveQuestionAnswer,
 } from "./actionQuestions";
 
-import { recieveUsers, saveUserAnswer } from "./actionUsers";
+import {
+    recieveUsers,
+    saveUserAnswer,
+    createUser
+  } from "./actionUsers";
 
-import { showLoading, hideLoading } from "react-redux-loading";
+import {
+    showLoading,
+    hideLoading
+  } from "react-redux-loading";
 
 export function handleSaveAnswer(qid, answer) {
   return (dispatch, getState) => {
@@ -55,6 +63,22 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
     }).then((question) => {
       dispatch(createQuestion(question));
       dispatch(hideLoading());
+    });
+  };
+}
+
+export function handleAddUser(name, email, password)
+{
+  return (dispatch) =>
+  {
+    const info = {
+      name,
+      email,
+      password,
+    };
+    _saveUser(info).then(() =>
+    {
+      dispatch(createUser(name, email, password));
     });
   };
 }

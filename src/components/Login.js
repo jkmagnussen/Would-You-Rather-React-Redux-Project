@@ -1,8 +1,9 @@
 import React from "react";
-
 import { connect } from "react-redux";
-
 import { setAuthUser } from "../actions/actionsAuthUser";
+import { Route } from "react-router-dom";
+import Register from "./Register";
+
 
 class Login extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Login extends React.Component {
   render() {
     const { users } = this.props;
     return (
+      <div>
       <form className="loginWrap" onSubmit={this.handleSubmit}>
         <br />
         <select
@@ -54,7 +56,10 @@ class Login extends React.Component {
         <button className="loginBtn" type="submit">
           Log in
         </button>
+        <br />
       </form>
+      <Register />
+      </div>
     );
   }
 }

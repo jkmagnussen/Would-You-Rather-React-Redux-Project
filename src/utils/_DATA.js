@@ -15,6 +15,8 @@ let users = {
   laurynpih: {
     id: "laurynpih",
     name: "Lauryn Pih",
+    email: "lpih@outlook.com",
+    password: "ghost1",
     avatarURL: Lauryn,
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
@@ -27,6 +29,8 @@ let users = {
   erikdavidkov: {
     id: "erikdavidkov",
     name: "Erik Davidkov",
+    email: "erik@outlook.com",
+     password: "frog",
     avatarURL: Erik,
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
@@ -329,6 +333,40 @@ function formatQuestion({ optionOneText, optionTwoText, author }) {
       text: optionTwoText,
     },
   };
+}
+
+function formatUser({ name, email, password }){
+  //const id = name.toLowerCase().trim()
+  return {
+    name: {
+      name: name, 
+      email: email,
+      password: password,
+      avatarURL: '',
+      answers: '',
+      questions: ['']
+    },
+  };
+}
+
+export function _saveUser(user) {
+  return new Promise((res, rej) => {
+    const formattedUser = formatUser(user)
+
+    setTimeout(() => {
+      users = {
+        ...users,
+        [formattedUser.id]: formattedUser,
+      };
+    users = {
+        ...users,
+      user: users.concat(
+        [formattedUser]),
+      };
+
+      res([formattedUser]);
+    }, 1000);
+  });
 }
 
 export function _saveQuestion(question) {

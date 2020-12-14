@@ -7,6 +7,8 @@ export const RECIEVE_QUESTION = " RECIEVE_QUESTION";
 
 export const RECIEVE_USERS = "RECIEVE_USERS";
 
+export const CREATE_USER = "CREATE_USERS";
+
 export const TOGGLE_VOTE = "TOGGLE_VOTE";
 
 export const ANSWERED_QUESTION = "ANSWERED_QUESTION";
