@@ -67,6 +67,9 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
   };
 }
 
+
+// New add user functionality 
+
 export function handleAddUser(name, email, password)
 {
   return (dispatch) =>
