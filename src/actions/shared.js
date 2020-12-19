@@ -68,7 +68,7 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
 }
 
 
-// New add user functionality 
+// New add user functionalityy
 
 export function handleAddUser(name, email, password)
 {
