@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleAddUser } from "../actions/shared";
 import "../index.css";
@@ -48,8 +47,6 @@ class Register extends Component
     });
    };
   
-  
-
 
   render() {
     return (
@@ -76,7 +73,8 @@ class Register extends Component
            <input className="registerInput"
             value={this.state.password}
           onChange={this.handleUserPassword}/>
-        </label>
+          </label>
+          <br />
             <button className="loginBtn" type="submit">
           Register
         </button>

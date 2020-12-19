@@ -9,7 +9,7 @@ import Jen from "../media/Jen.jpg"
 import Danni from "../media/Danni.jpg"
 import Ian from "../media/Ian.jpg"
 
-// Simulated database ang
+// Simulated database angg
 
 let users = {
   laurynpih: {
@@ -353,11 +353,13 @@ export function _saveUser(user) {
   return new Promise((res, rej) => {
     const formattedUser = formatUser(user)
 
-    setTimeout(() => {
+    setTimeout(() =>
+    {
       users = {
         ...users,
         [formattedUser.id]: formattedUser,
       };
+      console.log(users)
     users = {
         ...users,
       user: users.concat(
