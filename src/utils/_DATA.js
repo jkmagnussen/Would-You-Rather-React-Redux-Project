@@ -9,7 +9,7 @@ import Jen from "../media/Jen.jpg"
 import Danni from "../media/Danni.jpg"
 import Ian from "../media/Ian.jpg"
 
-// Simulated database angg
+// Simulated database an
 
 let users = {
   laurynpih: {
@@ -338,34 +338,22 @@ function formatQuestion({ optionOneText, optionTwoText, author }) {
 function formatUser({ name, email, password }){
   //const id = name.toLowerCase().trim()
   return {
-    name: {
       name: name, 
       email: email,
       password: password,
       avatarURL: '',
       answers: '',
       questions: ['']
-    },
   };
 }
 
 export function _saveUser(user) {
   return new Promise((res, rej) => {
     const formattedUser = formatUser(user)
-
+    const userId = formattedUser.name.toLowerCase().trim();
     setTimeout(() =>
     {
-      users = {
-        ...users,
-        [formattedUser.id]: formattedUser,
-      };
-      console.log(users)
-    users = {
-        ...users,
-      user: users.concat(
-        [formattedUser]),
-      };
-
+      users[userId] = formattedUser;
       res([formattedUser]);
     }, 1000);
   });

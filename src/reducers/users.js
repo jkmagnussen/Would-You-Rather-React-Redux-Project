@@ -10,7 +10,7 @@ export default function users(state = {}, action) {
     case CREATE_USER: 
       return {
         ...state, 
-        [action.users.id]: action.users,
+        [action.users]: action.users,
       }
     case ANSWERED_QUESTION:
       return {
