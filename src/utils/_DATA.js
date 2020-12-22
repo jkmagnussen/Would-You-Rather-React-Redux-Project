@@ -9,7 +9,7 @@ import Jen from "../media/Jen.jpg"
 import Danni from "../media/Danni.jpg"
 import Ian from "../media/Ian.jpg"
 
-// Simulated database a
+// Simulated databas
 
 let users = {
   laurynpih: {
