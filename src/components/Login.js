@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import {_getUsers} from "../utils/_DATA";
 import { setAuthUser } from "../actions/actionsAuthUser";
 import { Route } from "react-router-dom";
 import Register from "./Register";
@@ -10,9 +10,20 @@ class Login extends React.Component {
     super(props);
     this.state = {
       selectedId: null,
+      users: {}
     };
     this.handleSelectUser = this.handleSelectUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  // php php -S localhost:8080 -t public public/index.php
+
+
+  componentDidMount() {
+    const self = this;
+    _getUsers().then(function(users){
+      self.setState({users:users});
+    })
   }
 
   handleSubmit = (e) => {
@@ -35,7 +46,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { users } = this.props;
+    const { users } = this.state
     return (
       <div>
       <form className="loginWrap" onSubmit={this.handleSubmit}>
@@ -64,18 +75,5 @@ class Login extends React.Component {
   }
 }
 
-function mapStateToProps({ users }) {
-  return {
-    users,
-  };
-}
 
-function mapDispatchToProps(dispatch) {
-  return {
-    login: (id) => {
-      dispatch(setAuthUser(id));
-    },
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login

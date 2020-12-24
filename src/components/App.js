@@ -8,13 +8,18 @@ import Routes from "./Routes";
 import Footer from "./Footer/ExternalFooter/Footer";
 import Login from "./Login";
 
+import users from "../utils/_DATA";
+
+// Main App 
+
 class App extends Component {
   componentDidMount() {
-    this.props.handleGetInitialData();
+    console.log(users);
   }
   render() {
     let content;
-    if (this.props.notLoggedOn) {
+    console.log(users)
+    if (true) {
       content = <Login />;
     } else {
       content = <Routes />;
@@ -41,18 +46,4 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ authUser }) {
-  return {
-    notLoggedOn: authUser === null,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    handleGetInitialData: () => {
-      dispatch(handleGetInitialData());
-    },
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App
