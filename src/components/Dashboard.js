@@ -8,7 +8,7 @@ import Question from "./Question";
 
 import Navbar from "./Navbar";
 
-  // backend php php -S localhost:8080 -t public public/index.php
+  // backendd php php -S localhost:8080 -t public public/index.php
 
 class Dashboard extends React.Component {
   state = {
