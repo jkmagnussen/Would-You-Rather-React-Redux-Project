@@ -7,20 +7,36 @@ import "../index.css";
 import Routes from "./Routes";
 import Footer from "./Footer/ExternalFooter/Footer";
 import Login from "./Login";
+import {_getUsers} from "../utils/_DATA";
 
 import users from "../utils/_DATA";
 
-// Main App 
+// Main Appp
 
 class App extends Component {
-  componentDidMount() {
-    console.log(users);
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      selectedId: null,
+      users: {}
+    };
   }
+  
+  
+   componentDidMount() {
+    const self = this;
+    _getUsers().then(function(users){
+      self.setState({users:users});
+    })
+   }
+  
+  
   render() {
     let content;
     console.log(users)
     if (true) {
-      content = <Login />;
+      content = <Login users={this.state.users}/>;
     } else {
       content = <Routes />;
     }

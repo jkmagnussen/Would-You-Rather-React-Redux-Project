@@ -9,8 +9,8 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      users: {},
       selectedId: null,
-      users: {}
     };
     this.handleSelectUser = this.handleSelectUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,7 +46,8 @@ class Login extends React.Component {
   };
 
   render() {
-    const { users } = this.state
+    const { users } = this.props;
+    
     return (
       <div>
       <form className="loginWrap" onSubmit={this.handleSubmit}>
@@ -76,4 +77,4 @@ class Login extends React.Component {
 }
 
 
-export default Login
+export default Login;
