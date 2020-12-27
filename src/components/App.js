@@ -11,7 +11,7 @@ import {_getUsers} from "../utils/_DATA";
 
 import users from "../utils/_DATA";
 
-// Main Appp
+// Main App
 
 class App extends Component {
   constructor(props)
