@@ -16,7 +16,7 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // php php -S localhost:8080 -t public public/index.php
+  // php -S localhost:8080 -t public public/index.php
 
 
   componentDidMount() {
