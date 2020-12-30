@@ -1,15 +1,8 @@
 import Lauryn from "../media/Lauryn.jpg"
 import Erik from "../media/Erik.jpg"
 import Joe from "../media/Joe.jpg"
-import Cal from "../media/Cal.jpg"
-import Annie from "../media/Annie.jpg"
-import Mike from "../media/Mike.jpg"
-import Matt from "../media/Matt.jpg"
-import Jen from "../media/Jen.jpg"
-import Danni from "../media/Danni.jpg"
-import Ian from "../media/Ian.jpg"
 
-// Simulated databass
+// Simulated database
 
 let users = {
   laurynpih: {
