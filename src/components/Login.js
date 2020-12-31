@@ -18,6 +18,8 @@ class Login extends React.Component {
 
   // php -S localhost:8080 -t public public/index.php
 
+  // php server terminal command
+
   
 
 
