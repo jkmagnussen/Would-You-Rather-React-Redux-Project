@@ -12,6 +12,41 @@ code {
     monospace;
 }
 
+.headerWrap {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+@import url("https://fonts.googleapis.com/css?family=Kanit:900");
+
+.title {
+  background-color: rgb(55, 55, 95);
+  font-size: 60px;
+  color: rgb(201, 236, 247);
+  text-shadow: 2px 2px 8px #2e6585;
+  font-family: Kanit;
+  border-bottom: 1px solid rgba(23, 24, 36, 0.753);
+}
+
+.formz {
+  background-color: rgb(201, 236, 247);
+  border-radius: 20px;
+  width: 30vw;
+  margin: auto;
+  padding: 30px;
+  font-size: 20px;
+}
+
+input {
+  height: 3vh;
+  background: transparent;
+  border: rgba(23, 24, 36, 0.753);
+  border-bottom: 1px solid rgba(23, 24, 36, 0.507);
+}
+label {
+  color: rgb(21, 28, 43);
+}
+
 .loginBtn {
   text-align: center;
   font-size: 5vw;
@@ -80,16 +115,18 @@ a {
 
 .mainTitle {
   font-size: 10vw;
-  font-family: Galada;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: white;
   text-align: center;
   margin-bottom: 0;
   padding-bottom: 0;
   margin-top: 5%;
+  color: rgb(39, 39, 39);
 }
 
 html {
-  background-image: url("./components/Media/bg.jpg");
+  background-color: rgb(241, 241, 241);
   height: 120vh;
   background-repeat: no-repeat;
   background-size: cover;

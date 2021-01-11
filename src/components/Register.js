@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
-import { handleAddUser } from "../actions/shared";
 import "../index.css";
 
 import Thumb from "../media/thumb.png";
@@ -88,14 +86,6 @@ class Register extends Component
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    addUser: (name, email, password) => {
-      dispatch(handleAddUser(name, email, password))
-    },
-  };
-}
-
-export default connect(null, mapDispatchToProps)(Register);
+export default Register;
 
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { handleGetInitialData, handleSaveAnswer } from "../actions/shared";
 import { Link } from "react-router-dom";
 
 class QuestionInfo extends React.Component {
@@ -103,41 +102,4 @@ class QuestionInfo extends React.Component {
     );
   }
 }
-
-function mapStateToProps(state, { id }) {
-  const answers = state.users[state.authUser].answers;
-
-  const question = state.question[id];
-  const user = state.users[question.author];
-  let answer;
-  if (answers.hasOwnProperty(question.id)) {
-    answer = answers[question.id];
-  }
-  return {
-    question: state.question[id],
-
-    answer,
-
-    userIds: state.question.author,
-    auth: state.authUser,
-    total:
-      state.question[id].optionOne.votes.length +
-      state.question[id].optionTwo.votes.length,
-    optionOneVotes: state.question[id].optionOne.votes.length,
-    optionTwoVotes: state.question[id].optionTwo.votes.length,
-    Pic: user.avatarURL,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    saveQuestionAnswer: (answer, id) => {
-      dispatch(handleSaveAnswer(id, answer));
-    },
-    handleGetInitialData: () => {
-      dispatch(handleGetInitialData());
-    },
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionInfo);
+export default QuestionInfo;

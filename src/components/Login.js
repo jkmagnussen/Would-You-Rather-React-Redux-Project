@@ -20,9 +20,6 @@ class Login extends React.Component {
 
   // php server terminal command
 
-  
-
-
   componentDidMount() {
     const self = this;
     _getUsers().then(function(users){

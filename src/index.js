@@ -2,10 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import reducer from "./reducers";
-import middleware from "./middleware";
+
 import WebFont from "webfontloader";
 
 WebFont.load({
@@ -14,11 +11,10 @@ WebFont.load({
   },
 });
 
-const store = createStore(reducer, middleware);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <div >
     <App className="App" />
-  </Provider>,
+  </div>,
   document.getElementById("root")
 );

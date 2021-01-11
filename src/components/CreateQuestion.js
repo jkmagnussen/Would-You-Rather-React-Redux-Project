@@ -1,6 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import { handleAddQuestion } from "../actions/shared";
 import Navbar from "./Navbar";
 import { Redirect } from "react-router-dom";
 
@@ -65,19 +63,4 @@ class CreateQuestion extends React.Component {
     );
   }
 }
-
-function mapStateToProps({ users }, { id }) {
-  return {
-    user: users[id],
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    addQuestion: (optionOne, optionTwo) => {
-      dispatch(handleAddQuestion(optionOne, optionTwo));
-    },
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CreateQuestion);
+  export default CreateQuestion;
