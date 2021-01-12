@@ -16,14 +16,7 @@ class Header extends Component {
   }
   
    componentDidMount() {
-     const self = this;
 
-     _getUsers().then(function (response){
-       self.setState({
-         users: response.data
-       })
-       console.log(self.state.users);
-     })
    }
   
   

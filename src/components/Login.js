@@ -9,8 +9,8 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: {},
-      selectedId: null,
+      users: [],
+      selectedId: 0,
     };
     this.handleSelectUser = this.handleSelectUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,23 +22,18 @@ class Login extends React.Component {
 
   componentDidMount() {
     const self = this;
-    _getUsers().then(function(users){
-      self.setState({users:users});
+    _getUsers().then(function(response){
+      self.setState({ users: response.data });
+      
+      console.log(self.state.users);
     })
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-
-    const { selectedId } = this.state;
-    const { login } = this.props;
-
-    if (selectedId) {
-      login(selectedId);
-    } else {
-      alert("Please choose a user first");
+    console.log(this.state);
+    this.props.setUser(this.state.users[this.state.selectedId]);
     }
-  };
 
   handleSelectUser = (event) => {
     this.setState({
@@ -55,15 +50,17 @@ class Login extends React.Component {
         <br />
         <select
           className="selectLogin"
-          value={this.state.selectedId ? this.state.selectedId : ""}
+          value={this.state.selectedId}
           onChange={this.handleSelectUser}
         >
-          <option>Select a username</option>
-          {Object.keys(users).map((user) => (
-            <option key={user} value={user}>
-              {users[user].name}
-            </option>
-          ))}
+            <option>Select a username</option>
+            {
+              this.state.users.map((user, index) => (
+                <option key={index} value={index}>
+                 {user.username}
+                </option> 
+              ))
+            }
         </select>
         <br />
         <button className="loginBtn" type="submit">

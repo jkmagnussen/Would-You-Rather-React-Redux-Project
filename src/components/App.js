@@ -5,37 +5,40 @@ import Routes from "./Routes";
 import Footer from "./Footer/ExternalFooter/Footer";
 import Login from "./Login";
 import Header from "./Header"
+import Register from "./Register";
 import {_getUsers} from "../utils/_DATA";
 
 
 // Main App
 
 class App extends Component {
-  constructor(props)
-  {
+  constructor(props){
     super(props);
     this.state = {
-      selectedId: null,
-      users: {}
+      user: {}
     };
+    this.setUser = this.setUser.bind(this)
   }
+
   
    componentDidMount() {
      const self = this;
 
-     _getUsers().then(function (response){
-       self.setState({
-         users: response.data
-       })
-       console.log(self.state.users);
-     })
    }
+  
+  setUser = (user) => {
+    console.log(user);
+    this.setState({
+      user: user
+    })
+  }
   
   
   render() {
     let content;
-    if (true) {
-      content = <Login users={this.state.users}/>;
+    
+    if (Object.keys(this.state.user).length == 0) {
+      content = <Login setUser={this.setUser}/>;
     } else {
       content = <Routes />;
     }
@@ -44,7 +47,8 @@ class App extends Component {
       <div className="container">
         <Router>
           <Fragment>
-            <Header/>
+            <Header />
+            {content}
             <Footer />
           </Fragment>
         </Router>
