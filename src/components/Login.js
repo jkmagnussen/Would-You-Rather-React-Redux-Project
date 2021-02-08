@@ -3,6 +3,7 @@ import {_getUsers} from "../utils/_DATA";
 import { setAuthUser } from "../actions/actionsAuthUser";
 import { Route } from "react-router-dom";
 import Register from "./Register";
+import axios from "axios";
 
 
 class Login extends React.Component {
@@ -22,11 +23,26 @@ class Login extends React.Component {
 
   componentDidMount() {
     const self = this;
+    axios.interceptors.request.use((config) =>
+    {
+      config.headers.Authorization = "iuyghoiseuhoiuhesrboiug"
+      return config;
+    })
     _getUsers().then(function(response){
       self.setState({ users: response.data });
       
       console.log(self.state.users);
     })
+    axios.post(`/users/session`,
+      {
+        "email": "NEW@hjello.com",
+        "password": "Hello worldf"
+      }).then(function (response){
+        console.log(response.data)
+      }).then(function (error)
+      {
+        console.log("Error");
+      })
   }
 
   handleSubmit = (e) => {
@@ -73,6 +89,5 @@ class Login extends React.Component {
     );
   }
 }
-
 
 export default Login;

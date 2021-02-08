@@ -6,7 +6,9 @@ import Footer from "./Footer/ExternalFooter/Footer";
 import Login from "./Login";
 import Header from "./Header"
 import Register from "./Register";
-import {_getUsers} from "../utils/_DATA";
+import { _getUsers } from "../utils/_DATA";
+import axios from "axios";
+
 
 
 // Main App
@@ -18,12 +20,11 @@ class App extends Component {
       user: {}
     };
     this.setUser = this.setUser.bind(this)
+    axios.defaults.baseURL = `http://localhost/api/`;
   }
-
   
    componentDidMount() {
      const self = this;
-
    }
   
   setUser = (user) => {
@@ -32,7 +33,6 @@ class App extends Component {
       user: user
     })
   }
-  
   
   render() {
     let content;
@@ -57,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;
