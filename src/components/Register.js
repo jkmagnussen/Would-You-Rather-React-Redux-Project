@@ -51,7 +51,7 @@ class Register extends Component
 
       this.state.formSubmit === false ? 
         <form className="registerContainer" onSubmit={this.handleSubmit}>
-        <h3 className="signUpTitle">Sign Up Now: </h3>
+        <h3 className="signUpTitle">Sign Up: </h3>
         <label>
           Name: 
            <input className="registerInput"

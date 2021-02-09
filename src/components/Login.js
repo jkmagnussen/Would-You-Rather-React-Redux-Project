@@ -61,24 +61,19 @@ class Login extends React.Component {
     const { users } = this.props;
     
     return (
-      <div>
-      <form className="loginWrap" onSubmit={this.handleSubmit}>
-        <br />
-        <select
-          className="selectLogin"
-          value={this.state.selectedId}
-          onChange={this.handleSelectUser}
-        >
-            <option>Select a username</option>
-            {
-              this.state.users.map((user, index) => (
-                <option key={index} value={index}>
-                 {user.username}
-                </option> 
-              ))
-            }
-        </select>
-        <br />
+      <div class="loginForm">
+        <form className="registerContainer" onSubmit={this.handleSubmit}>
+
+          <label >
+            Username: 
+            <input className="registerInput"/>
+          </label>
+          <br />
+          <label >
+            Password:   
+            <input className="registerInput"/>
+          </label>
+          <br/>
         <button className="loginBtn" type="submit">
           Log in
         </button>

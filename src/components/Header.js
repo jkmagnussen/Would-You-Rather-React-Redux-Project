@@ -24,20 +24,7 @@ class Header extends Component {
 
     return (
       <div className="headerWrap">
-
-        <h1 className="title">Would You Rather?</h1>
-        <form className="formz">
-          <label>
-            Username: 
-            <input />
-          </label>
-          <br />
-          <br />
-          <label>
-            Password:   
-            <input />
-          </label>
-        </form>
+        <h1 className="title">quandary</h1>
       </div>
     );
   }

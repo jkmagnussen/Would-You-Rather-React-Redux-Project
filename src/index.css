@@ -1,3 +1,8 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +10,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+.container {
+  background-image: url("./media/clouds.jpg");
+  background-size: cover;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+
+.loginForm {
+  padding-top: 3%;
 }
 
 code {
@@ -13,23 +31,28 @@ code {
 }
 
 .headerWrap {
+  background-image: url("./media/clouds.jpg");
   display: inline-block;
   width: 100%;
-  text-align: center;
+
+  background-color: rgb(37, 37, 37);
 }
 @import url("https://fonts.googleapis.com/css?family=Kanit:900");
 
 .title {
-  background-color: rgb(55, 55, 95);
   font-size: 60px;
-  color: rgb(201, 236, 247);
-  text-shadow: 2px 2px 8px #2e6585;
-  font-family: Kanit;
-  border-bottom: 1px solid rgba(23, 24, 36, 0.753);
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-size: 10vw;
+  font-family: Galada;
+  mix-blend-mode: screen;
+  margin: 0;
+  text-align: left;
+  padding-left: 3%;
 }
 
 .formz {
-  background-color: rgb(201, 236, 247);
+  background-color: rgba(53, 53, 53, 0.63);
   border-radius: 20px;
   width: 30vw;
   margin: auto;
