@@ -64,15 +64,18 @@ class Login extends React.Component {
       <div class="loginForm">
         <form className="registerContainer" onSubmit={this.handleSubmit}>
 
-          <label >
-            Username: 
-            <input className="registerInput"/>
-          </label>
+            <input
+              style={{fontSize:"4vw"}}
+              className="registerInput"
+              placeholder="Username"/>
+
           <br />
-          <label >
-            Password:   
-            <input className="registerInput"/>
-          </label>
+
+            <input
+            style={{ fontSize: "4vw"}}
+              className="registerInput"
+              placeholder="Password"/>
+
           <br/>
         <button className="loginBtn" type="submit">
           Log in

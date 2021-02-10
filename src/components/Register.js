@@ -52,26 +52,27 @@ class Register extends Component
       this.state.formSubmit === false ? 
         <form className="registerContainer" onSubmit={this.handleSubmit}>
         <h3 className="signUpTitle">Sign Up: </h3>
-        <label>
-          Name: 
-           <input className="registerInput"
-            value={this.state.name}
-          onChange={this.handleUserName}/>
-        </label>
+
+           <input
+              style={{fontSize:"4vw"}}
+              className="registerInput"
+              placeholder="Name"
+              value={this.state.name}
+              onChange={this.handleUserName}/>
         <br />
-        <label>
-          Email: 
-           <input className="registerInput"
-            value={this.state.email}
-          onChange={this.handleUserEmail}/>
-        </label>
+           <input
+              style={{fontSize:"4vw"}}
+              className="registerInput"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleUserEmail}/>
         <br />
-        <label>
-          Password: 
-           <input className="registerInput"
+          <input
+            style={{fontSize:"4vw"}}
+            className="registerInput"
+            placeholder="Password"
             value={this.state.password}
-          onChange={this.handleUserPassword}/>
-          </label>
+            onChange={this.handleUserPassword}/>
           <br />
             <button className="loginBtn" type="submit">
           Register
