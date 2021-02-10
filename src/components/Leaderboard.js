@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Navbar from "./Navbar";
+
 
 class Leaderboard extends React.Component {
   state = {
@@ -49,7 +49,7 @@ class Leaderboard extends React.Component {
     const { users } = this.props;
     return (
       <div>
-        <Navbar />
+
         {users.map((user, index) => (
           <div className="questionBox" key={user.id}>
             <div>

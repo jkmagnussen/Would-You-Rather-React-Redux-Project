@@ -7,49 +7,8 @@ import home from "../Media/home.png";
 class Footer extends React.Component {
   render() {
     return (
-      <div
-        style={{
-          marginTop: 30,
-          textAlign: "center",
-        }}
-      >
-        <a href="https://jkmagnussen.com">
-          <img
-            className="home"
-            src={home}
-            alt="home"
-            style={{
-              width: "10vw",
-              height: "10vw",
-              padding: 20,
-            }}
-          />
-        </a>
-        <a href="https://github.com/jkmagnussen/Would-Yoy-Rather--React-Redux-Project">
-          <img
-            className="github"
-            src={github}
-            alt="github"
-            style={{
-              width: "10vw",
-              height: "10vw",
-              padding: 20,
-            }}
-          />
-        </a>
-
-        <a href="https://linkedin.com/in/joseph-magnussen/">
-          <img
-            className="linkedIn"
-            src={linkedIn}
-            alt="linkedIn"
-            style={{
-              width: "10vw",
-              height: "10vw",
-              padding: 20,
-            }}
-          />
-        </a>
+     <div>
+        <p style={{textAlign:"center", marginTop: 30, paddingBottom: 40}}>© 2021 quandary | About | Contact |Privacy Policy | Cookies | Terms</p>
       </div>
     );
   }

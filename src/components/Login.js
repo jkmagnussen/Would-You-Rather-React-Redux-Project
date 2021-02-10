@@ -81,9 +81,8 @@ class Login extends React.Component {
           Log in
         </button>
         <br />
-      </form>
-      <Register />
-      </div>
+        </form>
+        </div>
     );
   }
 }

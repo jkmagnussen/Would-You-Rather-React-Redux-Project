@@ -1,6 +1,6 @@
 import React from "react";
 import back from "./Media/back.png";
-import Navbar from "./Navbar";
+
 import { withRouter } from "react-router";
 
 class QuestionInfo extends React.Component {
@@ -25,7 +25,7 @@ class QuestionInfo extends React.Component {
     return (
       <div>
         {" "}
-        <Navbar />
+
         <div className="questionBox">
           <img className="imgPic" alt="img" src={this.props.Pic} />
 

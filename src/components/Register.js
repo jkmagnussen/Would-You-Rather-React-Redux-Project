@@ -48,10 +48,9 @@ class Register extends Component
 
   render() {
     return (
-
-      this.state.formSubmit === false ? 
+      <div class="loginForm">
         <form className="registerContainer" onSubmit={this.handleSubmit}>
-        <h3 className="signUpTitle">Sign Up: </h3>
+
 
            <input
               style={{fontSize:"4vw"}}
@@ -78,10 +77,7 @@ class Register extends Component
           Register
         </button>
         </form>
-        : 
-        <div>
-          <img className="thumb" src={Thumb} /> 
-        </div>
+      </div>
       
     );
   }

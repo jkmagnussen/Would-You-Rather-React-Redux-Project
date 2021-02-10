@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+
 import { Redirect } from "react-router-dom";
 
 class CreateQuestion extends React.Component {
@@ -36,7 +36,7 @@ class CreateQuestion extends React.Component {
     }
     return (
       <div className="question">
-        <Navbar />
+
         <div className="questionBox">
           <form className="create" onSubmit={this.handleSubmit}>
             <h2 className="questionSubtitle">Would You Rather</h2>

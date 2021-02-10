@@ -1,8 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { connect } from "react-redux";
-
-import { unsetAuthUser } from "../actions/actionsAuthUser";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -42,10 +39,7 @@ class Navbar extends React.Component {
             </NavLink>
           </li>
           <li className="loggedAs">
-            {this.props.user}
-            {this.props.user === this.props.users.id ? (
-              <img alt="avaratImage" src={this.props.users.avatarURL} />
-            ) : null}
+            
             <button className="logoutBtn" onClick={this.handleSubmit}>
               Logout
             </button>
@@ -56,19 +50,4 @@ class Navbar extends React.Component {
   }
 }
 
-function mapStateToProps({ users, authUser, id }) {
-  return {
-    user: authUser,
-    users,
-  };
-}
 
-function mapDispatchToProps(dispatch) {
-  return {
-    logout: () => {
-      dispatch(unsetAuthUser());
-    },
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
