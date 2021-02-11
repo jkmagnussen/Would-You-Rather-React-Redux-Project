@@ -12,6 +12,8 @@ class Login extends React.Component {
     this.state = {
       users: [],
       selectedId: 0,
+      username: '',
+      password:''
     };
     this.handleSelectUser = this.handleSelectUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,22 +35,24 @@ class Login extends React.Component {
       
       console.log(self.state.users);
     })
-    axios.post(`/users/session`,
-      {
-        "email": "NEW@hjello.com",
-        "password": "Hello worldf"
-      }).then(function (response){
-        console.log(response.data)
-      }).then(function (error)
-      {
-        console.log("Error");
-      })
+    console.log(self.state);
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
-    this.props.setUser(this.state.users[this.state.selectedId]);
+    const self = this;
+    console.log(self.state);
+    axios.post(`/users/session`,
+      {
+        "email": self.state.username,
+        "password": self.state.password
+      }).then(function (response){
+        console.log(response.data)
+        self.props.setUser(response.data);
+      }).then(function (error)
+      {
+        console.log("Error");
+      })
     }
 
   handleSelectUser = (event) => {
@@ -56,6 +60,8 @@ class Login extends React.Component {
       selectedId: event.target.value,
     });
   };
+
+
 
   render() {
     const { users } = this.props;
@@ -65,16 +71,21 @@ class Login extends React.Component {
         <form className="registerContainer" onSubmit={this.handleSubmit}>
 
             <input
-              style={{fontSize:"4vw"}}
-              className="registerInput"
-              placeholder="Username"/>
+            style={{ fontSize: "4vw" }}
+            className="registerInput"
+            placeholder="Username"
+            value={this.state.username}
+            onChange={(event) => this.setState({username:event.target.value})}/>
 
           <br />
 
             <input
-            style={{ fontSize: "4vw"}}
-              className="registerInput"
-              placeholder="Password"/>
+            style={{ fontSize: "4vw" }}
+            className="registerInput"
+            placeholder="Password"
+            name="hello"
+            value={this.state.password}
+            onChange={(event) => this.setState({password:event.target.value})}/>
 
           <br/>
         <button className="loginBtn" type="submit">

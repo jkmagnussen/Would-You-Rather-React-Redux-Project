@@ -4,6 +4,7 @@ import "../index.css";
 import Routes from "./Routes";
 import Footer from "./Footer/ExternalFooter/Footer";
 import Login from "./Login";
+import Header from "./Header";
 import Register from "./Register";
 import { _getUsers } from "../utils/_DATA";
 import axios from "axios";
@@ -16,26 +17,35 @@ class App extends Component {
     super(props);
     this.state = {
        user: {},
-      login: false,
-      signUp: false,
+      showLogin: false,
+      showSignUp: false,
     };
-    this.toggleRegister = this.toggleRegister.bind(this)
-    this.toggleLogin = this.toggleLogin.bind(this)
-    this.setUser = this.setUser.bind(this)
     axios.defaults.baseURL = `http://localhost/api/`;
+    const userObject = localStorage.getItem("userObject");
+
+    if (userObject)
+    {
+      const token = JSON.parse(localStorage.getItem(userObject)).access_token
+      axios.interceptors.request.use((config) =>
+      {
+        config.headers.Authorization = `Bearer ${token}`;
+        return config;
+      });
+    }
+
   }
 
   toggleLogin = () => {
     this.setState({
-      login: true, 
-      signUp: false,
+      showLogin: !this.state.showLogin, 
+      showSignUp: false,
     })
   }
 
     toggleRegister = () => {
     this.setState({
-      login: false, 
-      signUp: true,
+      showLogin: false, 
+      showSignUp: !this.state.showSignUp,
     })
   }
   
@@ -44,14 +54,11 @@ class App extends Component {
    }
   
   setUser = (user) => {
-    console.log(user);
-    this.setState({
-      user: user
-    })
+    localStorage.setItem("userObject", JSON.stringify(user))
   }
 
   conditionalRender = () =>{
-    if (this.state.login === true & Object.keys(this.state.user).length == 0){
+    if (this.state.showLogin === true & Object.keys(this.state.user).length == 0){
       return (
         <div>
           <Login setUser={this.setUser} />
@@ -66,7 +73,7 @@ class App extends Component {
         </div>
       )
     }
-    else if (this.state.signUp === true){ 
+    else if (this.state.showSignUp === true){ 
       return (
         <div>
         <Register />
@@ -99,16 +106,8 @@ class App extends Component {
       <div className="container">
         <Router>
           <Fragment>
-            <div className="headerWrap">
-             <h1 className="title">quandary
-              <button className="loginBtn1" type="submit" onClick={() => this.toggleLogin()}>
-            Log in
-              </button>
-              <button className="loginBtn2" type="submit" onClick={() => this.toggleRegister()}>
-            Sign Up!
-              </button>
-             </h1>
-            </div>
+            <Header login={this.toggleLogin} signUp={this.toggleRegister}/>
+
             {this.conditionalRender()}
             
             {content}
