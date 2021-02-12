@@ -33,9 +33,7 @@ class Header extends Component {
     })
   }
   
-   componentDidMount() {
-     const self = this;
-   }
+
   
   setUser = (user) => {
     console.log(user);
