@@ -10,7 +10,7 @@ import { _getUsers } from "../utils/_DATA";
 import axios from "axios";
 import video from "../media/advert.mp4";
 
-// Main Appp
+// Main App
 
 class App extends Component {
   constructor(props){
