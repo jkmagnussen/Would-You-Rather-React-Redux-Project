@@ -31,8 +31,43 @@ class Header extends Component {
       login: false, 
       signUp: true,
     })
-  }
+    }
   
+  
+  
+  RenderAppropriateInfo = () =>
+  {
+    if (Object.keys(this.props.userProfile).length > 0){
+      return (
+        
+        <div className="headerWrap">
+          <h1 className="title">quandary</h1>
+          <button className="headerButton" type="submit" onClick={() => this.props.logout()}>Logout</button>
+
+          <label className="userTitle" style={{ fontSize: 20, color: 'white' }}>
+            
+            
+           Hello <br/>
+            {this.props.userProfile.userName.split(" ").slice(0, -1).join(' ') + " "}</label>
+            <img className="userImg" src={this.props.userProfile.avatarUrl} />
+        </div>
+      )
+    } else {
+      return (
+        <div className="headerWrap">
+          <h1 className="title">quandary</h1>
+            <button className="headerButton" type="submit" onClick={() => this.props.login()}>
+            Log in
+              </button>
+              <button className="headerButton" type="submit" onClick={() => this.props.signUp()}>
+            Sign Up
+              </button>
+        </div>
+      )
+    }
+   
+    
+  }
 
   
   setUser = (user) => {
@@ -41,63 +76,13 @@ class Header extends Component {
       user: user
     })
   }
-
-  conditionalRender = () =>{
-    if (this.state.login === true & Object.keys(this.state.user).length == 0){
-      return (
-        <div>
-          <Login setUser={this.setUser} />
-          <video
-            className="pitch"
-            style={{ marginTop: 25 }}
-            controls
-            autostart
-            autoPlay
-            muted
-            src={video} type="video/mp4" />
-        </div>
-      )
-    }
-    else if (this.state.signUp === true){ 
-      return (
-        <div>
-        <Register />
-          <video
-            className="pitch"
-            style={{ marginTop: 25 }}
-            controls
-            autostart
-            autoPlay
-            muted
-            src={video}
-            type="video/mp4" />
-      </div>)
-    }else{
-      return <video
-        className="pitch"
-        controls
-        autostart
-        autoPlay
-        muted
-        src={video}
-        type="video/mp4" />
-    }
-  }
   
   render(){
-
-
     return (
-            <div className="headerWrap">
-             <h1 className="title">quandary
-              <button className="loginBtn1" type="submit" onClick={() => this.props.login()}>
-            Log in
-              </button>
-              <button className="loginBtn2" type="submit" onClick={() => this.props.signUp()}>
-            Sign Up
-              </button>
-             </h1>
-            </div>
+      <div >
+
+        {this.RenderAppropriateInfo()}
+      </div>
     );
   }
 }

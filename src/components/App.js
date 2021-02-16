@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, withRouter } from "react-router-dom";
 import "../index.css";
 import Routes from "./Routes";
 import Footer from "./Footer/ExternalFooter/Footer";
@@ -9,6 +9,7 @@ import Register from "./Register";
 import { _getUsers } from "../utils/_DATA";
 import axios from "axios";
 import video from "../media/advert.mp4";
+
 
 // Main App
 
@@ -23,9 +24,8 @@ class App extends Component {
     axios.defaults.baseURL = `http://localhost/api/`;
     const userObject = localStorage.getItem("userObject");
 
-    if (userObject)
-    {
-      const token = JSON.parse(localStorage.getItem(userObject)).access_token
+    if (userObject){
+      const token = JSON.parse(userObject).access_token
       axios.interceptors.request.use((config) =>
       {
         config.headers.Authorization = `Bearer ${token}`;
@@ -51,10 +51,40 @@ class App extends Component {
   
    componentDidMount() {
      const self = this;
-   }
+
+     if (localStorage.getItem("userObject"))
+     {
+       axios.get("/users/me")
+         .then((response) =>
+         {
+           self.setState({
+             user: response.data
+           })
+           self.props.history.push("/dashboard");
+         }).catch(() =>
+         {
+           alert("please log in")
+         })
+     }
+    }
   
-  setUser = (user) => {
-    localStorage.setItem("userObject", JSON.stringify(user))
+  setUser = (userToken) => {
+    localStorage.setItem("userObject", JSON.stringify(userToken))
+    console.log(userToken);
+    const token = userToken.access_token
+    console.log(token);
+      axios.interceptors.request.use((config) =>
+      {
+        config.headers.Authorization = `Bearer ${token}`;
+        return config;
+      });
+    const self = this;
+    axios.get("/users/me")
+      .then((response) =>{
+        self.setState({
+          user: response.data
+        })
+      });
   }
 
   conditionalRender = () =>{
@@ -87,7 +117,10 @@ class App extends Component {
             src={video}
             type="video/mp4" />
       </div>)
-    }else{
+    } else if (Object.keys(this.state.user).length > 0)
+    {
+      return <Routes />;
+    } else {
       return <video
         className="pitch"
         controls
@@ -98,25 +131,32 @@ class App extends Component {
         type="video/mp4" />
     }
   }
+
+  logout = () => {
+    this.setState({
+      user: {}
+    })
+    localStorage.setItem("userObject", undefined)
+    window.localStorage.clear();
+    this.props.history.push("/")
+  }
   
-  render(){
+  render()
+  {
+    console.log(this.state.user)
     const content = <Routes />;
 
     return (
       <div className="container">
-        <Router>
           <Fragment>
-            <Header login={this.toggleLogin} signUp={this.toggleRegister}/>
+          <Header logout={this.logout} userProfile={this.state.user} login={this.toggleLogin} signUp={this.toggleRegister}/>
 
             {this.conditionalRender()}
-            
-            {content}
             <Footer />
           </Fragment>
-        </Router>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

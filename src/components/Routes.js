@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import Leaderboard from "./Leaderboard";
 import CreateQuestion from "./CreateQuestion";
-
+import Dashboard from "./Dashboard";
 import ErrorPage from "./ErrorPage";
 import QuestionInfo from "./QuestionInfo";
 
@@ -12,6 +12,7 @@ function Routes(props) {
   return (
     <div className="container">
       <Switch>
+        <Route path="/dashboard" exact component={Dashboard} />
 
         <Route path="/leaderboard" exact component={Leaderboard} />
         <Route path="/add" exact component={CreateQuestion} />

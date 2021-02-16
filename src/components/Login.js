@@ -25,11 +25,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     const self = this;
-    axios.interceptors.request.use((config) =>
-    {
-      config.headers.Authorization = "iuyghoiseuhoiuhesrboiug"
-      return config;
-    })
+  
     _getUsers().then(function(response){
       self.setState({ users: response.data });
       
@@ -49,7 +45,7 @@ class Login extends React.Component {
       }).then(function (response){
         console.log(response.data)
         self.props.setUser(response.data);
-      }).then(function (error)
+      }).catch(function (error)
       {
         console.log("Error");
       })
