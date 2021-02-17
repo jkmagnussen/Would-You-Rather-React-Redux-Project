@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
     const { users } = this.props;
     
     return (
-      <div class="loginForm">
+      <div class="Dash">
         <h1>HELLO</h1>
         </div>
     );

@@ -15,6 +15,11 @@ body {
   background-size: cover;
 }
 
+.registerInput {
+  font-size: 10px;
+  font-family: Galada;
+}
+
 .pitch {
   text-align: center;
   width: 90vw;
@@ -27,7 +32,7 @@ body {
 }
 
 .headerButton {
-  font-size: 30px;
+  font-size: 25px;
   font-family: Galada;
   color: rgba(255, 255, 255, 0.897);
   opacity: 0.9;
@@ -93,7 +98,13 @@ code {
   padding-bottom: 2%;
   position: relative;
   display: inline;
-  width: 100%;
+  width: 80%;
+}
+
+.Dash {
+  background-color: rgba(255, 255, 255, 0.651);
+  width: 80vw;
+  margin: auto;
 }
 
 .formz {
@@ -113,6 +124,19 @@ input {
 }
 label {
   color: rgb(21, 28, 43);
+}
+
+.fileSubmit {
+  text-align: center;
+  font-size: 30px;
+  font-family: Galada;
+  color: rgba(19, 19, 19, 0.897);
+  opacity: 0.7;
+  display: inlne-flex;
+  margin: 5%;
+  border-radius: 10px;
+  width: 100%;
+  border-bottom: brown;
 }
 
 .loginBtn {

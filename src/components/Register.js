@@ -68,11 +68,14 @@ class Register extends Component
         <br />
           <input
             style={{fontSize:"4vw"}}
-            className="registerInput"
+            className="registerInput"s
             placeholder="Password"
             value={this.state.password}
             onChange={this.handleUserPassword}/>
           <br />
+          <input type="file"
+            className="fileSubmit" />
+          <br/>
             <button className="loginBtn" type="submit">
           Register
         </button>
