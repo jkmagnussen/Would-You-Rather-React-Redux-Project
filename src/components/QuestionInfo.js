@@ -1,5 +1,5 @@
 import React from "react";
-import back from "./Media/back.png";
+
 
 import { withRouter } from "react-router";
 
@@ -37,13 +37,6 @@ class QuestionInfo extends React.Component {
               <p> {this.props.total} vote</p>
             )}
           </div>
-
-          <img
-            alt="img2"
-            className="backBtn"
-            onClick={this.props.history.goBack}
-            src={back}
-          />
 
           <p className="qTitle">@{question.author} asks</p>
           <p className="timestamp">

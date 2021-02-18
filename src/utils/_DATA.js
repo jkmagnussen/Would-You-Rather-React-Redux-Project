@@ -1,7 +1,4 @@
 import axios from "axios";
-import Lauryn from "../media/Lauryn.jpg"
-import Erik from "../media/Erik.jpg"
-import Joe from "../media/Joe.jpg"
 
 // Simulated database
 // php -S localhost:8080 -t public public/index.php
@@ -12,7 +9,7 @@ let users = {
     name: "Lauryn Pih",
     email: "lpih@outlook.com",
     password: "ghost1",
-    avatarURL: Lauryn,
+    avatarURL: "Lauryn",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionTwo",
@@ -26,7 +23,7 @@ let users = {
     name: "Erik Davidkov",
     email: "erik@outlook.com",
     password: "frog",
-    avatarURL: Erik,
+    avatarURL: "Erik",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
       xj352vofupe1dqz9emx13r: "optionTwo",
@@ -36,11 +33,10 @@ let users = {
   joemagnussen: {
     id: "joemagnussen",
     name: "Joe Magnussen",
-    avatarURL: Joe,
+    avatarURL: "Joe",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
-      vthrdm985a262al8qx3do: "optionTwo",
-      "6ni6ok3ym7mf1p33lnez": "optionTwo",
+      vthrdm985a262al8qx3do: "optionTwo"
     },
     questions: ["6ni6ok3ym7mf1p33lnez", "xj352vofupe1dqz9emx13r"],
   }

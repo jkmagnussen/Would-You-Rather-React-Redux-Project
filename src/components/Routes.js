@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 
 import Leaderboard from "./Leaderboard";
 import CreateQuestion from "./CreateQuestion";
-import Dashboard from "./Dashboard";
-import ErrorPage from "./ErrorPage";
+import Dashboard from "./Dashboard/Dashboard.js";
+import ErrorPage from "./ErrorPage/ErrorPage.js";
 import QuestionInfo from "./QuestionInfo";
 
 function Routes(props) {

@@ -1,0 +1,18 @@
+.registerInput {
+  font-size: 3vw;
+  font-family: Galada;
+}
+
+.loginForm {
+  padding-top: 15vh;
+}
+
+.loginBtn {
+  font-size: 3vw;
+  font-family: Galada;
+  width: 40%;
+  height: 100%;
+  margin-bottom: 20px;
+  opacity: 0.6;
+  border-radius: 10px;
+}
