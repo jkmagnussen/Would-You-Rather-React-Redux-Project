@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import ProfilePicUpload from '../ProfilePicUpload/ProfilePicUpload'
 import "./Register.css";
 
 
@@ -72,13 +73,10 @@ class Register extends Component
             onChange={this.handleUserPassword}/>
           <br />
           <p className="imageUploadText">Optional profile picture upload:</p>
-          <input type="file"
-            style={{ borderRadius: "10px" }}
-            className="fileSubmit" />
-          <br/>
-            <button className="registerBtn" type="submit">
-          Register
-        </button>
+          <ProfilePicUpload />
+          
+          <button className="registerBtn"
+            type="submit">Register</button>
         </form>
       </div>
       

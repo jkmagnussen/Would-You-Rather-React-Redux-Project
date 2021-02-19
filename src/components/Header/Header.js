@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Search from "./Assets/search.png"
+import Notification from "./Assets/bell.png";
+import Message from "./Assets/message.png";
 
 import "./Header.css";
 
@@ -37,22 +40,22 @@ class Header extends Component {
     if (Object.keys(this.props.userProfile).length > 0){
       return (
         
-        <div className="headerWrap">
-          <h2 className="title" style={{fontSize: "30px"}}>quandary</h2>
-          <input className="searchBar" type="text" />
-          <button className="headerButtons" type="submit" onClick={() => this.props.logout()}>Logout</button>
+        <div >
+          <h2 className="title">quandary</h2>
 
+          <button className="headerButtons" type="submit" onClick={() => this.props.logout()}>Logout</button>
+          <img className="userImg" src={this.props.userProfile.avatarUrl} />
           <label className="userTitle">
-            
-            
            Hello <br/>
             {this.props.userProfile.userName.split(" ").slice(0, -1).join(' ') + " "}</label>
-            <img className="userImg" src={this.props.userProfile.avatarUrl} />
+          <img className="HeaderBtn" src={Notification} />
+          <img className="HeaderBtn" src={Message} />
+          <img className="HeaderBtn" src={Search} />
         </div>
       )
     } else {
       return (
-        <div className="headerWrap">
+        <div >
           <h2 className="title">quandary</h2>
             <button className="headerButtons" type="submit" onClick={() => this.props.login()}>
             Log in
@@ -76,7 +79,6 @@ class Header extends Component {
   render(){
     return (
       <div className="headerWrap">
-
         {this.RenderAppropriateInfo()}
       </div>
     );

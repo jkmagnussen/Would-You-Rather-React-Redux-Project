@@ -1,0 +1,6 @@
+.dashboardWrap {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(56, 56, 56, 0.486);
+}

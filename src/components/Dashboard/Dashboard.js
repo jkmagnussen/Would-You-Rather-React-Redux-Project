@@ -1,7 +1,7 @@
 import React from "react";
-import {_getUsers} from "../../utils/_DATA";
+import { _getUsers } from "../../utils/_DATA";
+import "./Dashboard.css";
 import axios from "axios";
-
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -26,9 +26,10 @@ class Dashboard extends React.Component {
     const { users } = this.props;
     
     return (
-      <div class="Dash">
-        <h1>HELLO</h1>
-        </div>
+      <div class="dashboardWrap">
+
+
+      </div>
     );
   }
 }
