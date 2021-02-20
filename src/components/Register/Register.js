@@ -67,7 +67,7 @@ class Register extends Component
         <br />
           <input
 
-            className="registerInput"s
+            className="registerInput"
             placeholder="Password"
             value={this.state.password}
             onChange={this.handleUserPassword}/>
