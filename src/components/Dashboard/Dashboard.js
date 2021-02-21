@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
     this.state = {
       addPost: false,
       seeCovered: false,
-      seeUncovered: true
+      seeUncovered: false
     };
     
   }
@@ -59,7 +59,6 @@ class Dashboard extends React.Component {
           <img className="uncover" src={uncover} onClick={this.toggleCoveredPost} />
           <img className="view" src={view} onClick={this.toggleUncoveredPost} />
 
-          <UncoveredPosts />
           {this.state.addPost == true ? <PostUpload /> : null}
           {this.state.seeCovered == true ?
             <div>

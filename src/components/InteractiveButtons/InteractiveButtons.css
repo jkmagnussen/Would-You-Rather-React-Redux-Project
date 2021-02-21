@@ -1,0 +1,26 @@
+.combineNumber {
+  display: flex;
+  margin: auto;
+  margin-bottom: 3%;
+  justify-content: center;
+}
+
+.buttonResultsWrap {
+  display: flex;
+  margin: auto;
+  width: 100%;
+}
+
+.interactiveButtons {
+  width: 6vw;
+}
+
+.digit {
+  background-color: rgba(255, 0, 0, 0.548);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 2vw;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}

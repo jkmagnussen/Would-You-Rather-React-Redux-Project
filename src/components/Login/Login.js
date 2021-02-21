@@ -62,7 +62,8 @@ class Login extends React.Component {
       <div class="loginForm">
         <form className="registerContainer" onSubmit={this.handleSubmit}>
 
-            <input
+          <input
+            style={{color: "#292929"}}
             className="registerInput"
             placeholder="Username"
             value={this.state.username}
@@ -70,7 +71,8 @@ class Login extends React.Component {
 
           <br />
 
-            <input
+          <input
+            style={{color: "#292929"}}
             className="registerInput"
             placeholder="Password"
             name="hello"

@@ -150,12 +150,12 @@ getCroppedImg(image, crop) {
       rows="4" placeholder="Add a status/ desctiption"/>
                 <div className="titlesWrap">
                     
-                    <div className="imageHolders"> 
+                    <div className="imageHolder1"> 
                         <input className="picTitle" placeholder="Title" style={{color: "rgb(195, 243, 252)"}}/>
                         {preview1}
                     </div>
                 
-                    <div className="imageHolders">
+                    <div className="imageHolder2">
                         <input className="picTitle" placeholder="Title" />
                     {preview2}
                     </div>

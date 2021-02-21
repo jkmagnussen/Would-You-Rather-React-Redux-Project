@@ -2,6 +2,7 @@ import React from "react";
 import { _getUsers } from "../../utils/_DATA";
 import "./CoveredPost.css";
 import axios from "axios";
+import InteractiveButtons from "../InteractiveButtons/InteractiveButtons";
 import user from "./Assets/user.jpg";
 import image1 from "./Assets/image1.jpg";
 import image2 from "./Assets/image2.jpg";
@@ -10,23 +11,14 @@ class CoveredPost extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      addPost: false,
+      liked: false,
+      totalLikes: 6
     };
-    
   }
-
-  // php -S localhost:8080 -t public public/index.php
-
-  // php server terminal command
 
   componentDidMount() {
     const self = this;
-    
   }
-
-  toggleAddPost = () => {
-      this.setState({addPost: !this.state.addPost})
-    }   
 
   render() {
     const { users } = this.props;
@@ -48,7 +40,7 @@ class CoveredPost extends React.Component {
              <img className="imageCrop" src={image2} />
           </div>
         </div>
-
+        <InteractiveButtons />
       </div>
     );
   }

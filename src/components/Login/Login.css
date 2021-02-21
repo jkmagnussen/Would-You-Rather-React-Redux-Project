@@ -3,8 +3,14 @@
   font-family: Galada;
 }
 
+.registerInput:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .loginForm {
   padding-top: 15vh;
+  outline: none;
 }
 
 .loginBtn {
@@ -15,4 +21,9 @@
   margin-bottom: 20px;
   opacity: 0.6;
   border-radius: 10px;
+}
+
+.loginBtn:focus {
+  outline: none;
+  box-shadow: none;
 }
