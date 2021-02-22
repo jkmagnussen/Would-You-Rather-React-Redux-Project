@@ -8,15 +8,26 @@
 .buttonResultsWrap {
   display: flex;
   margin: auto;
-  width: 100%;
+  width: 40%;
 }
 
 .interactiveButtons {
-  width: 6vw;
+  height: 40%;
+  width: 40%;
 }
 
 .digit {
   background-color: rgba(255, 0, 0, 0.548);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 2vw;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.transparentDigit {
+  background-color: rgba(255, 0, 0, 0);
   border-radius: 50%;
   width: 30px;
   height: 30px;

@@ -31,8 +31,6 @@ class InteractiveButtons extends React.Component {
     
   }
 
-
-
   toggleLikePost = () =>{
   
     if (this.state.liked == false){
@@ -50,12 +48,12 @@ class InteractiveButtons extends React.Component {
       
   
    likeColorChange = () => {
-     if (this.state.liked == false)
+     if (this.state.liked == 0)
      {
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={clap} onClick={this.toggleLikePost} />
-           {this.state.likes > 0 ? <p className="digit">this.state.likes</p> : null}
+           {this.state.likes == 0 ? <p className="transparentDigit"></p> : null}
          </div>
         )
   
@@ -63,12 +61,35 @@ class InteractiveButtons extends React.Component {
      {
        return (
          <div className="combineNumber">
-          <img className="interactiveButtons" src={clap2} onClick={this.likeToggle} />
+          <img className="interactiveButtons" src={clap2} onClick={this.toggleLikePost} />
            <p className="digit">{this.state.likes}</p>
          </div>
        )
   }
   }   
+
+    commentCount = () => {
+     if (this.state.commentOpen == true){
+       return (
+         <div className="combineNumber">
+          <img className="interactiveButtons" src={comment} onClick={this.expandComments} />
+           {this.state.comments == 0 ? <p className="transparentDigit"></p> : null}
+         </div>
+        )
+  
+     } else
+     {
+       return (
+         <div className="combineNumber">
+           <img className="interactiveButtons" src={comment} onClick={this.expandComments} />
+           <p className="digit">{this.state.comments}</p>
+         </div>
+       )
+  }
+  }  
+
+
+
 
   expandComments = () =>{
     this.setState({
@@ -87,12 +108,9 @@ class InteractiveButtons extends React.Component {
           <img className="interactiveButtons" src={share} />
           <p className="digit">1</p>
           </div>
-      <div className="combineNumber">
-          <img className="interactiveButtons" src={comment} onClick={this.expandComments}/>
-          <p className="digit">2</p>
-      </div>
 
-        {this.likeColorChange()}
+      {this.commentCount()}
+      {this.likeColorChange()}
         <br/>
       </div>
         <div className="commentDrop">{this.state.commentOpen == true ? <CoveredComment /> : null}</div>

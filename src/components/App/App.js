@@ -139,7 +139,7 @@ class App extends Component {
     return (
       <div className="container">
           <Fragment>
-          <Header logout={this.logout} userProfile={this.state.user} login={this.toggleLogin} signUp={this.toggleRegister}/>
+          <Header logout={this.logout} userProfile={this.state.user} login={this.toggleLogin} signUp={this.toggleRegister} />
             {this.conditionalRender()}
           </Fragment>
       </div>
