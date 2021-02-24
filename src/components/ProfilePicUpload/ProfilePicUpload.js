@@ -17,7 +17,7 @@ class ProfilePicUpload extends Component {
         }
     }
 
-handleFile = e => {
+handleFile = e => { 
     const fileReader = new FileReader()
     fileReader.onloadend = () => {
         this.setState({src: fileReader.result })

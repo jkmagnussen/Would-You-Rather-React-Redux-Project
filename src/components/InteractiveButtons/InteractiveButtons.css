@@ -8,7 +8,8 @@
 .buttonResultsWrap {
   display: flex;
   margin: auto;
-  width: 40%;
+  width: 55%;
+  margin-bottom: 1%;
 }
 
 .interactiveButtons {
@@ -16,14 +17,20 @@
   width: 40%;
 }
 
-.digit {
-  background-color: rgba(255, 0, 0, 0.548);
+.trophyInteractiveButton {
+  margin-top: 7px;
+  height: 35%;
+  width: 35%;
+}
+
+.interactiveButtonDigit {
+  background-color: rgb(180, 76, 76);
   border-radius: 50%;
   width: 30px;
   height: 30px;
   font-size: 2vw;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Galada;
 }
 
 .transparentDigit {
@@ -34,4 +41,8 @@
   font-size: 2vw;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.commentDrop {
+  padding-bottom: 5%;
 }

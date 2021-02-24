@@ -1,17 +1,19 @@
 import React from "react";
 
 import "./ReplyButtons.css";
-import CoveredComment from "../CoveredComment";
 import axios from "axios";
-import user from "./Assets/user.jpg";
 
-import view from "./Assets/look.png";
-import view2 from "./Assets/look2.png";
+import view from "../../Assets/look.png";
+import view2 from "../../Assets/look2.png";
+import clap from "../../Assets/clap.png";
+import clap2 from "../../Assets/clap2.png";
+import look from "../../Assets/look.png";
+import star from "../../Assets/star.png";
+import star2 from "../../Assets/star2.png";
 
 
-import clap from "./Assets/clap.png";
-import look from "./Assets/look.png";
-import clap2 from "./Assets/clap2.png";
+import Reply from "./Reply/Reply"
+import ReplyCommentForm from "./ReplyCommentForm/ReplyCommentForm";
 
 
 class ReplyButtons extends React.Component {
@@ -20,12 +22,39 @@ class ReplyButtons extends React.Component {
     this.state = {
       liked: false,
       likes: 5,
+      viewMore: false,
       viewCommentReply: false,
-      commentReplyCount: 3,
+      commentReplyCount: 1,
+      starActive: false,
+      commentReply: false
     };
   }
 
-     toggleLikePost = () =>{
+
+  componentDidMount() {
+    const self = this;
+  }
+
+  commentReply = () =>{
+       this.setState({
+        commentReply: !this.state.commentReply,
+      })
+  }
+
+  toggleViewMore = () =>{
+       this.setState({
+        viewCommentReply: !this.state.viewCommentReply,
+      })
+  }
+  
+    toggleStar = () =>{
+       this.setState({
+        starActive: !this.state.starActive,
+      })
+    }
+  
+  
+    toggleLikePost = () =>{
   
     if (this.state.liked == false){
       this.setState({
@@ -38,10 +67,6 @@ class ReplyButtons extends React.Component {
         likes: this.state.likes -= 1
       })
     }
-  }
-
-  componentDidMount() {
-    const self = this;
   }
 
 
@@ -74,27 +99,45 @@ class ReplyButtons extends React.Component {
            {this.state.likes > 0 ? <p className="digit">{this.state.commentReplyCount}</p> : null}
          </div>
         )
-     } else
-     {
+     } else {
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={view2} onClick={this.toggleViewMore} />
            <p className="digit">{this.state.commentReplyCount}</p>
          </div>
-       )
-  }
-    
+           )
+         }
   }
 
-  render()
-  {
-    
+    starActive = () =>{
+         if (this.state.starActive == false)
+     {
+       return (
+         <div className="combineNumber">
+          <img className="starInteractiveButtons" src={star} onClick={this.toggleStar} />
+         </div>
+        )
+     } else {
+       return (
+         <div className="combineNumber">
+          <img className="starInteractiveButtons" src={star2} onClick={this.toggleStar} />
+         </div>
+           )
+         }
+  }
+
+  render(){
     return (
+      <div>
       <div className="combineNumber">
         {this.likeColorChange()}
-        {this.viewMore()}
+          {this.viewMore()}
+          {this.starActive()}
         <button className="replyButton" onClick={this.commentReply}>reply</button>
-         </div>
+        </div>
+        {this.state.commentReply == true ? <ReplyCommentForm /> : null}
+        {this.state.viewCommentReply == true ? <Reply /> : null}
+        </div>
     );
   }
 }

@@ -1,0 +1,22 @@
+.ReplycommentWrap {
+  background-color: rgba(63, 63, 63, 0.705);
+}
+
+.commentInputArea {
+  margin-top: 3%;
+  width: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.7vw;
+  border-radius: 10px;
+}
+
+.replyButton2 {
+  font-size: 3vw;
+  font-family: Galada;
+  height: 100%;
+  color: rgba(49, 49, 49, 0.705);
+  opacity: 0.3;
+  border-radius: 10px;
+  margin-bottom: 3%;
+  margin-top: 2%;
+}

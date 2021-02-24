@@ -1,13 +1,12 @@
 .commentsWrap {
-  margin-top: 4%;
-  margin-bottom: 3%;
+  margin-top: 4vh;
+  margin-bottom: 50px;
   background-color: rgba(0, 0, 0, 0.705);
   border-radius: 20px;
   height: 100%;
   width: 60vw;
   display: block;
   margin: auto;
-  margin-bottom: 3%;
 }
 
 .commentList {

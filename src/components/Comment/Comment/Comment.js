@@ -1,18 +1,17 @@
 import React from "react";
-import { _getUsers } from "../../utils/_DATA";
-import "./CoveredComment.css";
-import user from "./Assets/user.jpg";
+import "./Comment.css";
+import axios from "axios";
+import user from "../Assets/user.jpg";
 
-import view from "./Assets/look.png";
-import view2 from "./Assets/look2.png";
-
-import clap from "./Assets/clap.png";
-import clap2 from "./Assets/clap2.png";
-
-import CoveredReply from "./CoveredReply/CoveredReply";
 import ReplyButtons from "./ReplyButtons/ReplyButtons";
 
-class CoveredComment extends React.Component {
+import view from "../Assets/look.png";
+import view2 from "../Assets/look2.png";
+
+import clap from "../Assets/clap.png";
+import clap2 from "../Assets/clap2.png";
+
+class Comment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +25,7 @@ class CoveredComment extends React.Component {
   componentDidMount() {
     const self = this;
   }
+
 
    toggleLikePost = () =>{
     if (this.state.liked == false){
@@ -117,40 +117,24 @@ class CoveredComment extends React.Component {
     )
   }
 
+
   render() {
     const { users } = this.props;
     
     return (
-      <div class="commentsWrap">
-        <form>
-          <textarea className="commentInput" multiline
-            rows="4" placeholder="Add a status/ desctiption" />
-        </form>
-        <button className="replyButton2">Submit</button>
-        <div className="replyBox">
-        <div className="userTop">
-          <img className="profileThumbnail" src={user} />
-          <h3 className="userNameDisplay">User3482</h3>
-          <p className="commentText">This is an example of text that would fill this status/ caption section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice.</p>
+      <div className="commentWrap">
+        <div className="userReplyLayout">
+          <div className="usernameAndImgWrap">
+            <img className="profileCommentThumbnail" src={user} />
+          <h3 className="commentUsernameDisplay">User3482</h3>
           </div>
-
-          <ReplyButtons like={this.likeColorChange} viewMore={this.viewMore} commentReply={this.commentreply}/>
+          <p className="commentMainText">This is an example of text that would fill this status/ caption section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice.</p>
+        </div>
+        <ReplyButtons like={this.likeColorChange} viewMore={this.viewMore} commentReply={this.commentreply} />
         
-                  {this.state.viewCommentReply == true ? <CoveredReply />: null}
-                {this.state.commentSubReply == true ?
-                  <div>
-                    <form>
-                      <textarea className="commentInput" multiline
-                        rows="4" placeholder="Add a status/ desctiption" />
-                    </form>
-                    <button className="replyButton2">Submit</button>
-                  </div>
-                  : null}
-                </div>
-        <br/>
-      </div>
+     </div>         
     );
   }
 }
 
-export default CoveredComment;
+export default Comment;

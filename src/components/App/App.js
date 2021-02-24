@@ -4,6 +4,7 @@ import "./App.css";
 import Routes from "../Routes";
 import Login from "../Login/Login.js";
 import Header from "../Header/Header.js";
+import Footer from "../Footer/ExternalFooter/Footer";
 import Register from "../Register/Register.js";
 import { _getUsers } from "../../utils/_DATA";
 import axios from "axios";
@@ -141,7 +142,8 @@ class App extends Component {
           <Fragment>
           <Header logout={this.logout} userProfile={this.state.user} login={this.toggleLogin} signUp={this.toggleRegister} />
             {this.conditionalRender()}
-          </Fragment>
+        </Fragment>
+        <Footer />
       </div>
     );
   }

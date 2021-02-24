@@ -3,22 +3,25 @@ import { _getUsers } from "../../utils/_DATA";
 import "./InteractiveButtons.css";
 import axios from "axios";
 
-import CoveredComment from "../CoveredComment/CoveredComment";
+import Comment from "../Comment/CoveredComment";
 
 import share from "./Assets/share.png";
 import comment from "./Assets/comment.png";
 import clap from "./Assets/clap.png";
 import clap2 from "./Assets/clap2.png";
+import trophy from "./Assets/trophy.png";
+
 
 class InteractiveButtons extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       liked: false,
-      likes: 0,
-      comments: 0,
+      likes: 7,
+      comments: 5,
       commentOpen: false,
       shares: 0,
+      diamonds: 0
     };
     
   }
@@ -45,6 +48,13 @@ class InteractiveButtons extends React.Component {
       })
     }
   }
+
+  toggleDiamondAdd = () =>{
+    
+      this.setState({
+        diamonds: this.state.diamonds + 1
+      })
+  }
       
   
    likeColorChange = () => {
@@ -53,16 +63,17 @@ class InteractiveButtons extends React.Component {
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={clap} onClick={this.toggleLikePost} />
-           {this.state.likes == 0 ? <p className="transparentDigit"></p> : null}
+           {this.state.likes == 0 ?
+             <p className="transparentDigit"></p>
+             : <p className="interactiveButtonDigit">{this.state.likes}</p>}
          </div>
         )
-  
      } else
      {
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={clap2} onClick={this.toggleLikePost} />
-           <p className="digit">{this.state.likes}</p>
+           <p className="interactiveButtonDigit">{this.state.likes}</p>
          </div>
        )
   }
@@ -73,7 +84,7 @@ class InteractiveButtons extends React.Component {
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={comment} onClick={this.expandComments} />
-           {this.state.comments == 0 ? <p className="transparentDigit"></p> : null}
+           {this.state.comments == 0 ? <p className="transparentDigit"></p> : <p className="interactiveButtonDigit">{this.state.comments}</p>}
          </div>
         )
   
@@ -82,7 +93,7 @@ class InteractiveButtons extends React.Component {
        return (
          <div className="combineNumber">
            <img className="interactiveButtons" src={comment} onClick={this.expandComments} />
-           <p className="digit">{this.state.comments}</p>
+           {this.state.comments > 0 ? <p className="interactiveButtonDigit">{this.state.comments}</p> : <p className="transparentDigit"></p>}
          </div>
        )
   }
@@ -106,14 +117,18 @@ class InteractiveButtons extends React.Component {
       <div className="buttonResultsWrap">
         <div className="combineNumber">
           <img className="interactiveButtons" src={share} />
-          <p className="digit">1</p>
+          <p className="interactiveButtonDigit">1</p>
           </div>
 
       {this.commentCount()}
-      {this.likeColorChange()}
+          {this.likeColorChange()}
+          <div className="combineNumber">
+          <img className="trophyInteractiveButton" src={trophy} />
+          <p className="interactiveButtonDigit">1</p>
+          </div>
         <br/>
       </div>
-        <div className="commentDrop">{this.state.commentOpen == true ? <CoveredComment /> : null}</div>
+        <div className="commentDrop">{this.state.commentOpen == true ? <Comment /> : null}</div>
         </div>
     );
   }

@@ -1,0 +1,40 @@
+.combineNumber {
+  display: flex;
+  margin: auto;
+  margin-bottom: 0;
+  padding-top: 4%;
+  width: 70%;
+}
+
+.interactiveButtons {
+  width: 40%;
+  height: 30%;
+}
+
+.digit {
+  background-color: rgba(255, 0, 0, 0.548);
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+  margin-left: 5%;
+  font-size: 2vw;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.replyButton {
+  font-size: 3vw;
+  font-family: Galada;
+  height: 100%;
+  color: rgba(49, 49, 49, 0.705);
+  opacity: 0.3;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+.starInteractiveButtons {
+  width: 50%;
+  height: 40%;
+  margin-bottom: 11px;
+  margin-left: -40px;
+}
