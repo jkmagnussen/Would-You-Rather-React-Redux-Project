@@ -3,7 +3,7 @@ import "./Reply.css";
 
 import CommentedReplyButtons from "./CommentedReplyButtons/CommentedReplyButtons";
 
-import user from "../../../Assets/user.jpg"
+import user2 from "../../../Assets/user2.jpg"
 
 
 class Reply extends React.Component {
@@ -26,10 +26,10 @@ class Reply extends React.Component {
       <div className="ReplycommentWrap">
         <div className="userReplyLayout">
           <div className="usernameAndImgWrap">
-            <img className="profileCommentThumbnail" src={user} />
-          <h3 className="commentUsernameDisplay">User3482</h3>
+            <img className="profileCommentThumbnail" src={user2} />
+          <h3 className="commentUsernameDisplay">Twins3375</h3>
           </div>
-          <p className="commentMainText">This is an example of text that would fill this status/ caption section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice.</p>
+          <p className="commentMainText">@User3482 - This is an example of text that would fill the reply to comment section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice.</p>
         </div>
         <CommentedReplyButtons />
         

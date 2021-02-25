@@ -16,7 +16,7 @@ class CommentedReplyButtons extends React.Component {
     super(props);
     this.state = {
       liked: false,
-      likes: 5,
+      likes: 0,
       starActive: false
     };
   }
@@ -55,12 +55,12 @@ class CommentedReplyButtons extends React.Component {
 
 
   likeColorChange = () => {
-     if (this.state.liked == false)
+     if (this.state.likes != 0)
      {
        return (
          <div className="replyCombineNumber">
           <img className="replyInteractiveButtons" src={clap} onClick={this.toggleLikePost} />
-           {this.state.likes > 0 ? <p className="digit">{this.state.likes}</p> : null}
+           {this.state.likes > 0 ? <p className="replyDigit">{this.state.likes}</p> : null}
          </div>
         )
      } else
@@ -68,7 +68,7 @@ class CommentedReplyButtons extends React.Component {
        return (
          <div className="replyCombineNumber">
           <img className="replyInteractiveButtons" src={clap2} onClick={this.toggleLikePost} />
-           <p className="replyDigit">{this.state.likes}</p>
+           <p className="hiddenReplyDigit"></p>
          </div>
        )
   }

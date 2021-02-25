@@ -50,7 +50,7 @@
 .imageCrop {
   width: 40vw;
   margin: 3%;
-  margin-bottom: 5%;
+  margin-bottom: 0;
 }
 
 .titleOverlay {
@@ -61,6 +61,7 @@
   position: relative;
   top: 50%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
   color: rgb(195, 243, 252);
   font-family: Galada;

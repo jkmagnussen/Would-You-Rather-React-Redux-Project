@@ -1,0 +1,10 @@
+.timerWrap {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.timeStamp {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(172, 172, 172, 0.24);
+  font-size: 2vw;
+}

@@ -121,11 +121,12 @@ class InteractiveButtons extends React.Component {
           </div>
 
       {this.commentCount()}
-          {this.likeColorChange()}
+          
           <div className="combineNumber">
           <img className="trophyInteractiveButton" src={trophy} />
           <p className="interactiveButtonDigit">1</p>
           </div>
+          {this.likeColorChange()}
         <br/>
       </div>
         <div className="commentDrop">{this.state.commentOpen == true ? <Comment /> : null}</div>

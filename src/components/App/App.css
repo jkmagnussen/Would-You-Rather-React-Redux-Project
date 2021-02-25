@@ -10,8 +10,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   background-image: url("./Assets/clouds.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  background-attachment: scroll;
 }
 
 .advert {

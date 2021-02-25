@@ -3,6 +3,8 @@ import { _getUsers } from "../../utils/_DATA";
 import "./CoveredPost.css";
 import axios from "axios";
 import InteractiveButtons from "../InteractiveButtons/InteractiveButtons";
+import TimerOne from "./Timer/TimerOne";
+import TimerTwo from "./Timer/TimerTwo";
 import user from "./Assets/user.jpg";
 import image1 from "./Assets/image1.jpg";
 import image2 from "./Assets/image2.jpg";
@@ -32,12 +34,14 @@ class CoveredPost extends React.Component {
         </div>
         <div className="coveredPhotoContainer">
           <div style={{marginTop: 0, padding: 0}}>
-            <h2 className="titleOverlay">title1</h2>
+            <h2 className="titleOverlay">Twins throwin' Shapes</h2>
             <img className="imageCrop" src={image1} />
+            <TimerOne/>
           </div>
           <div style={{ marginTop: 0, padding: 0}}>
-            <h2 className='titleOverlay'>title1</h2>
-             <img className="imageCrop" src={image2} />
+            <h2 className='titleOverlay'>The dead don't die</h2>
+            <img className="imageCrop" src={image2} />
+            <TimerTwo/>
           </div>
         </div>
         <InteractiveButtons />

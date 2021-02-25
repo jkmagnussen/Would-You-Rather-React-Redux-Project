@@ -24,6 +24,8 @@ class CoveredComment extends React.Component {
       <div class="commentsWrap">
         <CommentForm />
 
+        // fake comments
+
         <Comment />
         <Comment />
         <Comment />
