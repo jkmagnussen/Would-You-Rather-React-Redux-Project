@@ -26,6 +26,7 @@ class Comment extends React.Component {
     const self = this;
   }
 
+  //hello 
 
    toggleLikePost = () =>{
     if (this.state.liked == false){
