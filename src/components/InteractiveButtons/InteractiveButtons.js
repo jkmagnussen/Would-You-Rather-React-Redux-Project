@@ -3,7 +3,7 @@ import { _getUsers } from "../../utils/_DATA";
 import "./InteractiveButtons.css";
 import axios from "axios";
 
-import Comment from "../Comment/CoveredComment";
+import CommentWrap from "../Comment/CommentWrap";
 
 import share from "./Assets/share.png";
 import comment from "./Assets/comment.png";
@@ -129,7 +129,7 @@ class InteractiveButtons extends React.Component {
           {this.likeColorChange()}
         <br/>
       </div>
-        <div className="commentDrop">{this.state.commentOpen == true ? <Comment /> : null}</div>
+        <div className="commentDrop">{this.state.commentOpen == true ? <CommentWrap /> : null}</div>
         </div>
     );
   }

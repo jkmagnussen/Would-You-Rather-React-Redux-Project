@@ -6,9 +6,16 @@ class ReplyCommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      replyText: "",
     };
   }
+
+      replySetText= () =>{
+      this.setState({
+        replyText: !this.state.starActive,
+      })
+    }
+
 
 
   componentDidMount() {
@@ -20,11 +27,20 @@ class ReplyCommentForm extends React.Component {
     
     return (
       <div className="commentFormWrap">
-        <form>
-          <textarea className="commentInput" multiline
-            rows="4" placeholder="Add a status/ desctiption" />
+        <form onSubmit={this.props.commentReplies(this.state.replyText)}>
+          <textarea
+            className="commentInput"
+            multiline
+            rows="4"
+            placeholder="Add a status/ desctiption"
+          value={this.props.commentReplies}
+          onChange={e => this.setState({ replyText: e.target.value })}
+          />
+          <div>
+            <button className="replyButton2" type="submit" value="Submit">Submit</button>
+          </div>
         </form>
-        <button className="replyButton2">Submit</button>
+        
       </div>     
     );
   }

@@ -29,7 +29,7 @@ class Reply extends React.Component {
             <img className="profileCommentThumbnail" src={user2} />
           <h3 className="commentUsernameDisplay">Twins3375</h3>
           </div>
-          <p className="commentMainText">@User3482 - This is an example of text that would fill the reply to comment section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice.</p>
+          <p className="commentMainText">{this.props.commentReplies}</p>
         </div>
         <CommentedReplyButtons />
         

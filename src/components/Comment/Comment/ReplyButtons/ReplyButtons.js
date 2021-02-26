@@ -35,7 +35,9 @@ class ReplyButtons extends React.Component {
     const self = this;
   }
 
-  commentReply = () =>{
+  commentReplyTrigger = () =>
+  {
+
        this.setState({
         commentReply: !this.state.commentReply,
       })
@@ -47,8 +49,10 @@ class ReplyButtons extends React.Component {
       })
   }
   
-    toggleStar = () =>{
-       this.setState({
+  toggleStar = () =>
+  {
+      this.props.starComment()
+      this.setState({
         starActive: !this.state.starActive,
       })
     }
@@ -90,6 +94,7 @@ class ReplyButtons extends React.Component {
   }
   }   
 
+
   viewMore = () =>{
          if (this.state.viewCommentReply == false)
      {
@@ -114,13 +119,13 @@ class ReplyButtons extends React.Component {
      {
        return (
          <div className="combineNumber">
-          <img className="starInteractiveButtons" src={star} onClick={this.toggleStar} />
+          <img className="starInteractiveButtons" src={star} onClick={this.toggleStar } />
          </div>
         )
      } else {
        return (
          <div className="combineNumber">
-          <img className="starInteractiveButtons" src={star2} onClick={this.toggleStar} />
+          <img className="starInteractiveButtons" src={star2} onClick={this.toggleStar } />
          </div>
            )
          }
@@ -133,10 +138,10 @@ class ReplyButtons extends React.Component {
         {this.likeColorChange()}
           {this.viewMore()}
           {this.starActive()}
-        <button className="replyButton" onClick={this.commentReply}>reply</button>
+        <button className="replyButton" onClick={this.commentReplyTrigger}>reply</button>
         </div>
-        {this.state.commentReply == true ? <ReplyCommentForm /> : null}
-        {this.state.viewCommentReply == true ? <Reply /> : null}
+        {this.state.commentReply == true ? <ReplyCommentForm commentReplies={this.props.commentReplies} /> : null}
+        {this.state.viewCommentReply == true ? <Reply commentReplies={this.props.commentReplies} /> : null}
         </div>
     );
   }

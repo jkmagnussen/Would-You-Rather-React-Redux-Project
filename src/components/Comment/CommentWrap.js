@@ -1,6 +1,6 @@
 import React from "react";
 import { _getUsers } from "../../utils/_DATA";
-import "./CoveredComment.css";
+import "./CommentWrap.css";
 
 import Comment from "./Comment/Comment";
 import CommentForm from "./CommentForm/CommentForm"
@@ -23,8 +23,6 @@ class CoveredComment extends React.Component {
     return (
       <div class="commentsWrap">
         <CommentForm />
-
-        // fake comments
 
         <Comment />
         <Comment />

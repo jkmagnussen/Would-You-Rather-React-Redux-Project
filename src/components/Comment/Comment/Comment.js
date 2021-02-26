@@ -19,6 +19,9 @@ class Comment extends React.Component {
       likes: 5,
       viewCommentReply: false,
       commentReplyCount: 3,
+      comment: "This is an example of text that would fill this status/ caption section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice.",
+      commentReplies: "This is an example of a comment reply",
+      starComment: false,
     };
   }
 
@@ -60,10 +63,13 @@ class Comment extends React.Component {
   toggleAddPost = () => {
       this.setState({addPost: !this.state.addPost})
   }   
+
+    toggleStarComment = () => {
+      this.setState({starComment: !this.state.starComment})
+  }  
   
      likeColorChange = () => {
-     if (this.state.liked == false)
-     {
+     if (this.state.liked == false){
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={clap} onClick={this.toggleLikePost} />
@@ -78,28 +84,25 @@ class Comment extends React.Component {
            <p className="digit">{this.state.likes}</p>
          </div>
        )
-  }
+    }
   }   
 
   viewMore = () =>{
-         if (this.state.viewCommentReply == false)
-     {
+         if (this.state.viewCommentReply == false){
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={view} onClick={this.toggleViewMore} />
            {this.state.likes > 0 ? <p className="digit">{this.state.commentReplyCount}</p> : null}
          </div>
         )
-     } else
-     {
+     } else {
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={view2} onClick={this.toggleViewMore} />
            <p className="digit">{this.state.commentReplyCount}</p>
          </div>
        )
-  }
-    
+    }
   }
 
   viewCommentreplyClick = () =>{
@@ -110,16 +113,19 @@ class Comment extends React.Component {
     )
   }
 
-  commentreply = () =>{
+  commentReply = (text) =>{
     return (
       this.setState({
         commentSubReply: !this.state.commentSubReply,
+        commentReplies: text,
+
       })
     )
   }
 
-
-  render() {
+  render()
+  {
+      console.log(this.state.starComment);
     const { users } = this.props;
     
     return (
@@ -129,9 +135,16 @@ class Comment extends React.Component {
             <img className="profileCommentThumbnail" src={user} />
           <h3 className="commentUsernameDisplay">User3482</h3>
           </div>
-          <p className="commentMainText">This is an example of text that would fill this status/ caption section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice.</p>
+          <p className="commentMainText">{this.state.comment}</p>
         </div>
-        <ReplyButtons like={this.likeColorChange} viewMore={this.viewMore} commentReply={this.commentreply} />
+        <ReplyButtons
+          like={this.likeColorChange}
+          viewMore={this.viewMore}
+          commentReply={this.commentReply}
+          starComment={this.toggleStarComment}
+          commentReplies={this.state.commentReplies}
+
+        />
         
      </div>         
     );
