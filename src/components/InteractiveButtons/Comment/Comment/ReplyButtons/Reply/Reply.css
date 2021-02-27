@@ -1,0 +1,59 @@
+.ReplycommentWrap {
+  background-color: rgba(63, 63, 63, 0.705);
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.commentInputArea {
+  margin-top: 3%;
+  width: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.7vw;
+  border-radius: 10px;
+}
+
+.replyButton2 {
+  font-size: 3vw;
+  font-family: Galada;
+  height: 100%;
+  color: rgba(49, 49, 49, 0.705);
+  opacity: 0.3;
+  border-radius: 10px;
+  margin-bottom: 3%;
+  margin-top: 2%;
+}
+
+.replyProfileCommentThumbnail {
+  border-radius: 50%;
+  width: 8vw;
+  margin-left: 5%;
+  margin-bottom: 0;
+}
+
+.replyCommentUsernameDisplay {
+  margin-top: 0;
+  color: rgb(195, 243, 252);
+  font-family: Galada;
+  font-size: 150%;
+  text-decoration: none;
+}
+
+.replyUsernameAndImgWrap {
+  display: block;
+  align-items: left;
+  justify-content: left;
+  margin-right: 6%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.replyCommentMainText {
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 6%;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2vw;
+  color: rgb(195, 243, 252);
+  text-decoration: none;
+}

@@ -69,7 +69,13 @@ class Dashboard extends React.Component {
               <CoveredPost />
             </div> : null}
           
-          {this.state.seeUncovered == true ? <UncoveredPosts /> : null}
+          {this.state.seeUncovered == true ?
+            <div>
+              <UncoveredPosts />
+              <UncoveredPosts />
+              <UncoveredPosts />
+              <UncoveredPosts />
+            </div> : null}
 
         </div>
         

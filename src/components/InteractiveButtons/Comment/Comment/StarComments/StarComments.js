@@ -1,17 +1,9 @@
 import React from "react";
-import "./Comment.css";
+import "./StarComment.css";
 import axios from "axios";
-import user from "../Assets/user.jpg";
 
-import ReplyButtons from "./ReplyButtons/ReplyButtons";
 
-import view from "../Assets/look.png";
-import view2 from "../Assets/look2.png";
-
-import clap from "../Assets/clap.png";
-import clap2 from "../Assets/clap2.png";
-
-import Comment from "../Comment/Comment"
+import Comment from "../Comment";
 
 class StarComments extends React.Component {
   constructor(props) {
@@ -37,7 +29,7 @@ class StarComments extends React.Component {
     const { users } = this.props;
     
     return (
-      <div className="commentWrap">
+      <div className="starCommentWrap">
         <Comment />
      </div>         
     );

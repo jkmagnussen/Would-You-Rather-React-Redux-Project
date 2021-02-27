@@ -2,8 +2,9 @@
   display: flex;
   margin: auto;
   margin-bottom: 0;
-  padding-top: 4%;
+  padding-top: 0%;
   width: 30%;
+  padding-bottom: 1%;
 }
 
 .replyInteractiveButtons {
@@ -14,16 +15,12 @@
 .replyDigit {
   background-color: rgb(180, 76, 76);
   border-radius: 50%;
-  width: 100px;
-  height: 20px;
   margin-left: 5%;
   font-size: 2vw;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 1px;
-  padding-bottom: 2px;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Galada;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .hiddenReplyDigit {
@@ -50,4 +47,5 @@
 .replyInteractiveButtonsStar {
   width: 6vw;
   margin-bottom: 12px;
+  margin-left: 15%;
 }

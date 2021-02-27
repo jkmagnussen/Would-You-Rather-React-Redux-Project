@@ -1,5 +1,7 @@
 .commentFormWrap {
   background-color: rgba(37, 37, 37, 0.705);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .commentInputArea {

@@ -1,8 +1,12 @@
-.commentWrap {
+.starCommentWrap {
   border-bottom: 1px solid rgb(54, 54, 54);
   background-color: rgba(44, 44, 44, 0.705);
-
+  width: 65%;
   padding-bottom: 5%;
+  margin: auto;
+  border-radius: 25px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .userReplyLayout {

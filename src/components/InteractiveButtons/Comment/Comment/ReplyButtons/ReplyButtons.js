@@ -49,7 +49,8 @@ class ReplyButtons extends React.Component {
       })
   }
   
-  toggleStar = () =>{
+  toggleStar = () =>
+  {
       this.props.starComment()
       this.setState({
         starActive: !this.state.starActive,

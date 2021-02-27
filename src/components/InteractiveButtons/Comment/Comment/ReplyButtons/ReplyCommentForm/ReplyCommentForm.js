@@ -27,7 +27,7 @@ class ReplyCommentForm extends React.Component {
     
     return (
       <div className="commentFormWrap">
-        <form onSubmit={this.props.commentReplies(this.state.replyText)}>
+        <form>
           <textarea
             className="commentInput"
             multiline

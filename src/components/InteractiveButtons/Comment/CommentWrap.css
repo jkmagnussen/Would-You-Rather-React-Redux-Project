@@ -7,6 +7,7 @@
   width: 60vw;
   display: block;
   margin: auto;
+  border-radius: 25px;
 }
 
 .commentList {

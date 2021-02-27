@@ -1,5 +1,5 @@
 import React from "react";
-import { _getUsers } from "../../utils/_DATA";
+import { _getUsers } from "../../../utils/_DATA";
 import "./CommentWrap.css";
 
 import Comment from "./Comment/Comment";

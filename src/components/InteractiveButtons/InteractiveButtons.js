@@ -3,13 +3,17 @@ import { _getUsers } from "../../utils/_DATA";
 import "./InteractiveButtons.css";
 import axios from "axios";
 
-import CommentWrap from "../Comment/CommentWrap";
+import CommentWrap from "./Comment/CommentWrap";
+
+import StarComments from "./Comment/Comment/StarComments/StarComments";
 
 import share from "./Assets/share.png";
 import comment from "./Assets/comment.png";
+import comment2 from "./Assets/comment2.png";
 import clap from "./Assets/clap.png";
 import clap2 from "./Assets/clap2.png";
 import trophy from "./Assets/trophy.png";
+import trophy2 from "./Assets/trophy2.png";
 
 
 class InteractiveButtons extends React.Component {
@@ -21,7 +25,8 @@ class InteractiveButtons extends React.Component {
       comments: 5,
       commentOpen: false,
       shares: 0,
-      diamonds: 0
+      trophyCommentToggle: false,
+      trophyComments: 3
     };
     
   }
@@ -49,13 +54,14 @@ class InteractiveButtons extends React.Component {
     }
   }
 
-  toggleDiamondAdd = () =>{
+    trophyCommentToggle = () =>{
     
       this.setState({
-        diamonds: this.state.diamonds + 1
+        trophyCommentToggle: !this.state.trophyCommentToggle,
+        commentOpen: false
       })
   }
-      
+     
   
    likeColorChange = () => {
      if (this.state.liked == 0)
@@ -68,8 +74,7 @@ class InteractiveButtons extends React.Component {
              : <p className="interactiveButtonDigit">{this.state.likes}</p>}
          </div>
         )
-     } else
-     {
+     } else {
        return (
          <div className="combineNumber">
           <img className="interactiveButtons" src={clap2} onClick={this.toggleLikePost} />
@@ -83,7 +88,7 @@ class InteractiveButtons extends React.Component {
      if (this.state.commentOpen == true){
        return (
          <div className="combineNumber">
-          <img className="interactiveButtons" src={comment} onClick={this.expandComments} />
+          <img className="interactiveButtons" src={comment2} onClick={this.expandComments} />
            {this.state.comments == 0 ? <p className="transparentDigit"></p> : <p className="interactiveButtonDigit">{this.state.comments}</p>}
          </div>
         )
@@ -96,15 +101,34 @@ class InteractiveButtons extends React.Component {
            {this.state.comments > 0 ? <p className="interactiveButtonDigit">{this.state.comments}</p> : <p className="transparentDigit"></p>}
          </div>
        )
-  }
+    }
   }  
 
 
+      trophyCommentColorOpen = () => {
+     if (this.state.trophyCommentToggle == true){
+       return (
+          <div className="combineNumber">
+            <img className="trophyInteractiveButton" src={trophy2} onClick={this.trophyCommentToggle} />
+          {this.state.trophyComments == 0 ? <p className="transparentDigit"></p> : <p className="interactiveButtonDigit">{this.state.trophyComments}</p>}
+          </div>
+        )
+  
+     } else{
+       return (
+          <div className="combineNumber">
+            <img className="trophyInteractiveButton" src={trophy} onClick={this.trophyCommentToggle} />
+          {this.state.trophyComments == 0 ? <p className="transparentDigit"></p> : <p className="interactiveButtonDigit">{this.state.trophyComments}</p>}
+          </div>
+       )
+    }
+  }  
 
 
   expandComments = () =>{
     this.setState({
       commentOpen: !this.state.commentOpen,
+      trophyCommentToggle: false,
     })
   }
 
@@ -121,18 +145,19 @@ class InteractiveButtons extends React.Component {
           </div>
 
       {this.commentCount()}
-          
-          <div className="combineNumber">
-          <img className="trophyInteractiveButton" src={trophy} />
-          <p className="interactiveButtonDigit">1</p>
-          </div>
+          { this.trophyCommentColorOpen()}
+
           {this.likeColorChange()}
         <br/>
       </div>
-        <div className="commentDrop">{this.state.commentOpen == true ? <CommentWrap /> : null}</div>
+        <div className="commentDrop">{this.state.commentOpen == true ? <CommentWrap /> : null}
+        </div>
+        <div className="commentDrop">{this.state.trophyCommentToggle == true ? <StarComments /> : null}</div>
         </div>
     );
   }
 }
 
 export default InteractiveButtons;
+
+
