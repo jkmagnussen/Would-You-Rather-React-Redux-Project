@@ -3,6 +3,9 @@ import axios from "axios";
 import Search from "./Assets/search.png"
 import Notification from "./Assets/bell.png";
 import Message from "./Assets/message.png";
+import friendRequest from "./Assets/friendRequest.png"
+import friends from "./Assets/friends.png"
+
 
 import "./Header.css";
 
@@ -41,7 +44,7 @@ class Header extends Component {
       return (
         
         <div >
-          <h2 className="title">quandary</h2>
+          <h2 className="title">pick</h2>
 
           <button className="headerButtons" type="submit" onClick={() => this.props.logout()}>Logout</button>
           <img className="userImg" src={this.props.userProfile.avatarUrl} />
@@ -50,13 +53,14 @@ class Header extends Component {
             {this.props.userProfile.userName.split(" ").slice(0, -1).join(' ') + " "}</label>
           <img className="HeaderBtn" src={Notification} />
           <img className="HeaderBtn" src={Message} />
+          <img className="HeaderBtn" src={friends} />
           <img className="HeaderBtn" src={Search} />
         </div>
       )
     } else {
       return (
         <div >
-          <h2 className="title">quandary</h2>
+          <h2 className="title">pick</h2>
             <button className="headerButtons" type="submit" onClick={() => this.props.login()}>
             Log in
               </button>

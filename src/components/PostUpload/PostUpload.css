@@ -11,19 +11,21 @@
   height: 100%;
 }
 
-.upload {
+.uploadBtnContainer {
+}
+
+.postUploadBtn {
   font-size: 2vw;
   font-family: Galada;
   width: 20%;
   opacity: 0.6;
   border-radius: 10px;
   font-family: Galada;
-
   text-align: center;
   display: block;
-  margin: 0 auto;
-  margin-bottom: 2%;
+  margin: auto;
   margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .statusInput {
@@ -56,26 +58,27 @@
   margin: auto;
   margin-left: 2%;
   object-fit: scale-down;
+  background-color: black;
 }
 
 .imageHolder1 {
-  background-color: rgba(0, 0, 0, 0.678);
+  /* background-color: rgba(0, 0, 0, 0.678);
   height: 100%;
   padding-bottom: 2.5%;
   align-items: center;
   text-align: center;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 0;*/
 }
 
 .imageHolder2 {
-  background-color: rgba(0, 0, 0, 0.678);
+  /*background-color: rgba(0, 0, 0, 0.678);
   height: 100%;
   padding-bottom: 2.5%;
   align-items: center;
   text-align: center;
   margin-left: 0;
-  margin-right: auto;
+  margin-right: auto;*/
 }
 
 .newPostTitle {
