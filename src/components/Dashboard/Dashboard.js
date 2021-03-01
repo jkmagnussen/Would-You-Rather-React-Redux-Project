@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
     
   }
 
-  // php -S localhost:8080 -t public public/index.php
+  // php -S localhost:8080 -t public public/index.phpp
 
   // php server terminal command
 
