@@ -3,6 +3,7 @@ import axios from "axios";
 import Search from "./Assets/search.png"
 import Notification from "./Assets/bell.png";
 import Message from "./Assets/message.png";
+import eye from "./Assets/eye.png";
 import friendRequest from "./Assets/friendRequest.png"
 import friends from "./Assets/friends.png"
 
@@ -44,7 +45,7 @@ class Header extends Component {
       return (
         
         <div >
-          <h2 className="title">pick</h2>
+          <img className="eyeLogo"src={eye}></img>
 
           <button className="headerButtons" type="submit" onClick={() => this.props.logout()}>Logout</button>
           <img className="userImg" src={this.props.userProfile.avatarUrl} />
