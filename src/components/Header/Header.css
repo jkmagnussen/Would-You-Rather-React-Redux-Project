@@ -39,10 +39,11 @@
 
 .userImg {
   border-radius: 50%;
-
   height: 70px;
   width: 70px;
-  margin-right: 20px;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 3%;
 }
 
 .HeaderBtn {
@@ -68,6 +69,7 @@
   position: relative;
   display: inline;
   width: 80%;
+  margin-bottom: -2%;
 }
 
 .searchBar {
@@ -83,4 +85,12 @@
   margin: auto;
   padding-left: 3%;
   padding-top: 2%;
+}
+
+.eyeLogo1 {
+  width: 8%;
+
+  margin-bottom: -2%;
+
+  padding-left: 3%;
 }

@@ -1,0 +1,43 @@
+.settingsWrap {
+  float: right;
+  display: block;
+  width: 30%;
+  height: 100%;
+  position: relative;
+  padding-bottom: 15px;
+  margin-right: 3%;
+  background-color: rgba(185, 185, 185, 0.192);
+  border-radius: 12px;
+}
+
+.cog {
+  margin-top: 6%;
+  margin-right: 2%;
+  margin-left: -4%;
+  width: 12%;
+  height: 12%;
+}
+
+.cogSettingsWrap {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.settingsTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1%;
+  font-family: Galada;
+  font-weight: 200;
+  color: rgba(0, 0, 0, 0.644);
+}
+
+.settingsList {
+  list-style-type: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2vh;
+  color: rgba(0, 0, 0, 0.767);
+  text-align: center;
+  margin: 2%;
+  color: rgb(203, 243, 255);
+}

@@ -54,7 +54,7 @@ class App extends Component {
            self.setState({
              user: response.data
            })
-           self.props.history.push("/dashboard");
+           .then(self.props.history.push("/dashboard"))
          }).catch(() =>
          {
            alert("please log in")

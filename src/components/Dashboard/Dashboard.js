@@ -9,13 +9,14 @@ import plus from "./Assets/plus.png";
 import uncover from "./Assets/uncover.png";
 import view from "./Assets/view.png";
 import Footer from "../Footer/ExternalFooter/Footer";
+import { withRouter } from 'react-router-dom';
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       addPost: false,
-      seeCovered: false,
+      seeCovered: true,
       seeUncovered: false
     };
     
@@ -47,7 +48,11 @@ class Dashboard extends React.Component {
       seeCovered: false,
       addPost: false,
     })
-    }  
+  }  
+  
+    redirectToProfile = () => {
+
+  }
 
   render() {
     const { users } = this.props;
@@ -84,4 +89,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+export default withRouter(Dashboard);

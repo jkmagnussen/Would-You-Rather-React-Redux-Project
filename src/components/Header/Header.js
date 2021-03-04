@@ -6,6 +6,8 @@ import Message from "./Assets/message.png";
 import eye from "./Assets/eye.png";
 import friendRequest from "./Assets/friendRequest.png"
 import friends from "./Assets/friends.png"
+import { withRouter } from 'react-router-dom';
+import Settings from "./Settings/Settings";
 
 
 import "./Header.css";
@@ -18,6 +20,7 @@ class Header extends Component {
        user: {},
       login: false,
       signUp: false,
+      toggleSettings: false,
     };
     this.toggleRegister = this.toggleRegister.bind(this)
     this.toggleLogin = this.toggleLogin.bind(this)
@@ -39,29 +42,43 @@ class Header extends Component {
     })
     }
   
+    redirectToDashboard = () => {
+   const { history } = this.props;
+   if(history) history.push('/dashboard');
+    }
+  
+      toggleSettings = () => {
+        this.setState({
+      toggleSettings: !this.state.toggleSettings
+    })
+    }
+
+  
   RenderAppropriateInfo = () =>
   {
     if (Object.keys(this.props.userProfile).length > 0){
       return (
-        
         <div >
-          <img className="eyeLogo"src={eye}></img>
+          <img className="eyeLogo" src={eye} onClick={this.redirectToDashboard}/>
 
           <button className="headerButtons" type="submit" onClick={() => this.props.logout()}>Logout</button>
-          <img className="userImg" src={this.props.userProfile.avatarUrl} />
-          <label className="userTitle">
-           Hello <br/>
-            {this.props.userProfile.userName.split(" ").slice(0, -1).join(' ') + " "}</label>
+          <img className="userImg" src={this.props.userProfile.avatarUrl} onClick={this.toggleSettings}/>
+          
           <img className="HeaderBtn" src={Notification} />
           <img className="HeaderBtn" src={Message} />
           <img className="HeaderBtn" src={friends} />
           <img className="HeaderBtn" src={Search} />
+          <div>
+            {this.state.toggleSettings == true ? <Settings /> : null}
+          </div>
         </div>
+
       )
     } else {
       return (
         <div >
-          <h2 className="title">pick</h2>
+          <h2 className="title">disclose</h2>
+          <img className="eyeLogo1"src={eye}></img>
             <button className="headerButtons" type="submit" onClick={() => this.props.login()}>
             Log in
               </button>
@@ -90,5 +107,5 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
 

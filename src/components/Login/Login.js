@@ -2,6 +2,7 @@ import React from "react";
 import {_getUsers} from "../../utils/_DATA";
 import axios from "axios";
 import "./Login.css";
+import { withRouter } from 'react-router-dom';
 
 
 class Login extends React.Component {
@@ -43,7 +44,9 @@ class Login extends React.Component {
       }).then(function (response){
         console.log(response.data)
         self.props.setUser(response.data);
-      }).catch(function (error)
+      }).then(
+        this.props.history.push("/dashboard")
+      ).catch(function (error)
       {
         console.log("Error");
       })
@@ -90,4 +93,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
