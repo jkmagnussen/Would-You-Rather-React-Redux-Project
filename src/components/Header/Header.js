@@ -8,6 +8,8 @@ import friendRequest from "./Assets/friendRequest.png"
 import friends from "./Assets/friends.png"
 import { withRouter } from 'react-router-dom';
 import Settings from "./Settings/Settings";
+import Notifications from "./Notifications/Notifications";
+import Connections from "./Connections/Connections";
 
 
 import "./Header.css";
@@ -21,6 +23,9 @@ class Header extends Component {
       login: false,
       signUp: false,
       toggleSettings: false,
+      toggleNotifications: false, 
+      toggleConnections: false,
+
     };
     this.toggleRegister = this.toggleRegister.bind(this)
     this.toggleLogin = this.toggleLogin.bind(this)
@@ -49,7 +54,26 @@ class Header extends Component {
   
       toggleSettings = () => {
         this.setState({
-      toggleSettings: !this.state.toggleSettings
+          toggleSettings: !this.state.toggleSettings,
+          toggleNotifications: false,
+          toggleConnections: false,
+    })
+      }
+  
+      toggleNotifications = () => {
+        this.setState({
+          toggleNotifications: !this.state.toggleNotifications,
+          toggleSettings: false,
+          toggleConnections: false,
+       
+    })
+    }
+
+      toggleConnections = () => {
+        this.setState({
+          toggleConnections: !this.state.toggleConnections,
+          toggleNotifications: false,
+          toggleSettings: false,
     })
     }
 
@@ -64,13 +88,11 @@ class Header extends Component {
           <button className="headerButtons" type="submit" onClick={() => this.props.logout()}>Logout</button>
           <img className="userImg" src={this.props.userProfile.avatarUrl} onClick={this.toggleSettings}/>
           
-          <img className="HeaderBtn" src={Notification} />
-          <img className="HeaderBtn" src={Message} />
-          <img className="HeaderBtn" src={friends} />
+          <img className="HeaderBtn" src={Notification} onClick={this.toggleNotifications}/>
+          <img className="HeaderBtn" src={Message}/>
+          <img className="HeaderBtn" src={friends} onClick={this.toggleConnections}/>
           <img className="HeaderBtn" src={Search} />
-          <div>
-            {this.state.toggleSettings == true ? <Settings /> : null}
-          </div>
+ 
         </div>
 
       )
@@ -100,9 +122,15 @@ class Header extends Component {
   
   render(){
     return (
+      <div>
       <div className="headerWrap">
         {this.RenderAppropriateInfo()}
-      </div>
+        </div>
+        {this.state.toggleSettings == true ? <Settings toggleSettings={this.toggleSettings} /> : null}
+        {this.state.toggleNotifications == true ? <Notifications toggleNotifications={this.toggleNotifications} /> : null}
+        {this.state.toggleConnections == true ? <Connections toggleConnections={this.toggleConnections} /> : null}
+        
+        </div>
     );
   }
 }

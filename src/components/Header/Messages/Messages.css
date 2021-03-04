@@ -1,19 +1,18 @@
-.settingsWrap {
+.messagesWrap {
+  float: right;
   display: block;
-  text-align: right;
   width: 30%;
-  text-align: center;
+  margin-top: 14%;
   position: absolute;
   z-index: 2;
   padding-bottom: 15px;
-  padding-top: 2%;
   margin-left: 55%;
-  margin-top: 14%;
   background-color: rgb(87, 87, 87);
   border-radius: 12px;
 }
 
-.settingsCog {
+.cog {
+  margin-top: 6%;
   margin-right: 2%;
   margin-left: -4%;
   width: 12%;
@@ -42,11 +41,4 @@
   text-align: center;
   margin: 2%;
   color: rgb(203, 243, 255);
-}
-
-.up {
-  width: 10%;
-  margin-right: 4%;
-  margin-top: 4%;
-  opacity: 0.4;
 }

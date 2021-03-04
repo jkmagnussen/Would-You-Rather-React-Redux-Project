@@ -1,4 +1,4 @@
-.settingsWrap {
+.messagesWrap {
   display: block;
   text-align: right;
   width: 30%;
@@ -13,7 +13,8 @@
   border-radius: 12px;
 }
 
-.settingsCog {
+.cog {
+  margin-top: 6%;
   margin-right: 2%;
   margin-left: -4%;
   width: 12%;
@@ -42,6 +43,12 @@
   text-align: center;
   margin: 2%;
   color: rgb(203, 243, 255);
+}
+
+.connections {
+  width: 15%;
+  margin-right: 4%;
+  opacity: 0.4;
 }
 
 .up {

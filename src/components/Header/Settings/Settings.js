@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Settings.css";
 import cog from "../Assets/cog.png";
 import { withRouter } from 'react-router-dom';
+import up from "../Assets/up.png";
 
 
 class Settings extends Component {
@@ -12,18 +13,18 @@ class Settings extends Component {
        
     };
   }
-
   
   render(){
     return (
       <div className="settingsWrap">
         <div className="cogSettingsWrap">
-          <img className="cog" src={cog} />
+          <img className="settingsCog" src={cog} />
           <h2 className="settingsTitle"> Settings </h2>
         </div>
-          <p className="settingsList">View Profile</p>
+          <p className="settingsList" onClick={this.redirectToProfile}>View Profile</p>
           <p className="settingsList">Edit Profile</p>
           <p className="settingsList">Account Settings</p>
+          <img className="up" src={up} onClick={this.props.toggleSettings} />
       </div>
     );
   }

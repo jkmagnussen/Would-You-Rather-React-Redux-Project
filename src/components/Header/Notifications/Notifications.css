@@ -1,4 +1,4 @@
-.settingsWrap {
+.notificationsWrap {
   display: block;
   text-align: right;
   width: 30%;
@@ -9,11 +9,11 @@
   padding-top: 2%;
   margin-left: 55%;
   margin-top: 14%;
-  background-color: rgb(87, 87, 87);
+  background-color: rgba(87, 87, 87, 0.966);
   border-radius: 12px;
 }
 
-.settingsCog {
+.bell {
   margin-right: 2%;
   margin-left: -4%;
   width: 12%;
@@ -27,6 +27,7 @@
 }
 
 .settingsTitle {
+  margin-top: 0;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 1%;
   font-family: Galada;
