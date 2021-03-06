@@ -22,9 +22,9 @@ class Messages extends Component {
                   <img className="connections" src={connections} onClick={this.props.toggleSettings} />
           <h2 className="settingsTitle"> Connections </h2>
         </div>
-          <p className="settingsList" onClick={this.redirectToProfile}>View Profile</p>
+          <p className="settingsList" onClick={this.redirectToProfile}>Requests:</p>
           <p className="settingsList">Edit Profile</p>
-        <p className="settingsList">Account Settings</p>
+        <p className="settingsList">View All Connections</p>
          <img className="up" src={up} onClick={this.props.toggleConnections} />
       </div>
     );

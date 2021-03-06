@@ -59,7 +59,7 @@
   background: url("./Assets/clouds.jpg");
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  font-size: 60px;
+  font-size: 5vw;
   color: rgb(228, 228, 228);
   font-family: Galada;
   margin: 0;

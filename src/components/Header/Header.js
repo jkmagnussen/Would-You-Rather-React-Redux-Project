@@ -10,6 +10,7 @@ import { withRouter } from 'react-router-dom';
 import Settings from "./Settings/Settings";
 import Notifications from "./Notifications/Notifications";
 import Connections from "./Connections/Connections";
+import SearchBar from "./SearchBar/SearchBar";
 
 
 import "./Header.css";
@@ -25,6 +26,7 @@ class Header extends Component {
       toggleSettings: false,
       toggleNotifications: false, 
       toggleConnections: false,
+      toggleSearchBar: false,
 
     };
     this.toggleRegister = this.toggleRegister.bind(this)
@@ -57,6 +59,7 @@ class Header extends Component {
           toggleSettings: !this.state.toggleSettings,
           toggleNotifications: false,
           toggleConnections: false,
+          toggleSearchBar: false,
     })
       }
   
@@ -65,6 +68,7 @@ class Header extends Component {
           toggleNotifications: !this.state.toggleNotifications,
           toggleSettings: false,
           toggleConnections: false,
+          toggleSearchBar: false,
        
     })
     }
@@ -72,6 +76,16 @@ class Header extends Component {
       toggleConnections = () => {
         this.setState({
           toggleConnections: !this.state.toggleConnections,
+          toggleNotifications: false,
+          toggleSettings: false,
+          toggleSearchBar: false,
+    })
+      }
+  
+        toggleSearchBar = () => {
+          this.setState({
+          toggleSearchBar: !this.state.toggleSearchBar,
+          toggleConnections: false,
           toggleNotifications: false,
           toggleSettings: false,
     })
@@ -91,7 +105,7 @@ class Header extends Component {
           <img className="HeaderBtn" src={Notification} onClick={this.toggleNotifications}/>
           <img className="HeaderBtn" src={Message}/>
           <img className="HeaderBtn" src={friends} onClick={this.toggleConnections}/>
-          <img className="HeaderBtn" src={Search} />
+          <img className="HeaderBtn" src={Search} onClick={this.toggleSearchBar} />
  
         </div>
 
@@ -129,6 +143,7 @@ class Header extends Component {
         {this.state.toggleSettings == true ? <Settings toggleSettings={this.toggleSettings} /> : null}
         {this.state.toggleNotifications == true ? <Notifications toggleNotifications={this.toggleNotifications} /> : null}
         {this.state.toggleConnections == true ? <Connections toggleConnections={this.toggleConnections} /> : null}
+        {this.state.toggleSearchBar == true ? <SearchBar toggleSearchBar={this.toggleSearchBar} /> : null}
         
         </div>
     );
