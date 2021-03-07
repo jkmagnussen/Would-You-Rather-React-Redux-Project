@@ -97,7 +97,7 @@ class PostUpload extends Component {
             console.log(crop1);
         }
         
-        //this.getCroppedImg(this.state.optionPicture1, crop1)
+        //thiss.getCroppedImg(this.state.optionPicture1, crop1)
     }
     
     onCropChange2 = (crop2) => {
