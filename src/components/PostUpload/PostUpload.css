@@ -11,9 +11,6 @@
   height: 100%;
 }
 
-.uploadBtnContainer {
-}
-
 .postUploadBtn {
   font-size: 2vw;
   font-family: Galada;
@@ -24,7 +21,7 @@
   text-align: center;
   display: block;
   margin: auto;
-  margin-top: 2%;
+  margin-top: 4%;
   margin-bottom: 2%;
 }
 
@@ -38,6 +35,7 @@
   margin-bottom: 3%;
   font-family: Arial, Helvetica, sans-serif;
   outline: none;
+  padding: 10px;
 }
 
 .picTitle {
@@ -51,47 +49,29 @@
   outline: none;
 }
 
-.imgThumb {
-  width: 96%;
-  margin-top: 5%;
-  float: left;
-  margin: auto;
-  margin-left: 2%;
-  object-fit: scale-down;
+.picTitle {
+  color: rgb(195, 243, 252);
+}
+
+.avatarImageCropper {
+  width: 400px;
+  height: 400px;
   background-color: black;
-}
-
-.imageHolder1 {
-  /* background-color: rgba(0, 0, 0, 0.678);
-  height: 100%;
-  padding-bottom: 2.5%;
-  align-items: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: 0;*/
-}
-
-.imageHolder2 {
-  /*background-color: rgba(0, 0, 0, 0.678);
-  height: 100%;
-  padding-bottom: 2.5%;
-  align-items: center;
-  text-align: center;
-  margin-left: 0;
-  margin-right: auto;*/
+  margin: 5px;
+  margin-top: 0;
 }
 
 .newPostTitle {
   text-align: center;
-  font-size: 3vw;
+  font-size: 4vw;
   font-family: Galada;
   color: rgb(211, 247, 250);
+  padding-top: 2%;
 }
 
 .titlesWrap {
   display: flex;
-  height: 10%;
-  align-items: center;
+  justify-content: center;
 }
 
 .imageInput {
