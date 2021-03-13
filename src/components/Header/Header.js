@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import Search from "./Assets/search.png"
 import Notification from "./Assets/bell.png";
-import Message from "./Assets/message.png";
+
 import eye from "./Assets/eye.png";
-import friendRequest from "./Assets/friendRequest.png"
+
 import friends from "./Assets/friends.png"
 import { withRouter } from 'react-router-dom';
 import Settings from "./Settings/Settings";
@@ -103,7 +103,6 @@ class Header extends Component {
           <img className="userImg" src={this.props.userProfile.avatarUrl} onClick={this.toggleSettings}/>
           
           <img className="HeaderBtn" src={Notification} onClick={this.toggleNotifications}/>
-          <img className="HeaderBtn" src={Message}/>
           <img className="HeaderBtn" src={friends} onClick={this.toggleConnections}/>
           <img className="HeaderBtn" src={Search} onClick={this.toggleSearchBar} />
  

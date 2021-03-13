@@ -77,7 +77,7 @@ class PostUpload extends Component {
                             value={this.state.picTitle1}
                             onChange={this.title1Set} />
                         <div className="avatarImageCropper">
-                            <AvatarImageCropper onChange={(fileBlob) => this.setState({optionPicture1: fileBlob })} actions={[<button key={0}>Remove</button>]} />
+                            <AvatarImageCropper onChange={(fileBlob) => this.setState({optionPicture1: fileBlob })} actions={[<button className="removeBtn" key={0}>Remove</button>]} />
                         </div>
                     </div>
                 
@@ -88,7 +88,7 @@ class PostUpload extends Component {
                             value={this.state.picTitle2}
                             onChange={this.title2Set} />
                         <div className="avatarImageCropper">
-                            <AvatarImageCropper onChange={(fileBlob) => this.setState({optionPicture2: fileBlob })} actions={[<button key={0}>Remove</button>]}/>
+                            <AvatarImageCropper onChange={(fileBlob) => this.setState({optionPicture2: fileBlob })} actions={[<button className="removeBtn" key={0}>Remove</button>]}/>
                         </div>
                     </div>
                 </div>
