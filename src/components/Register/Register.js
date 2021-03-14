@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
-import ProfilePicUpload from '../ProfilePicUpload/ProfilePicUpload'
+import ProfilePicUpload from '../ProfilePicUpload/ProfilePicUpload';
+import AvatarImageCropper from "react-avatar-image-cropper";
 import "./Register.css";
 
 
@@ -12,11 +13,10 @@ class Register extends Component
       email: '',
       password: '',
       formSubmit: false,
+      profilePic: null,
     };
 
-    this.handleUserName = this.handleUserName.bind(this);
-    this.handleUserEmail = this.handleUserEmail.bind(this);
-    this.handleUserPassword = this.handleUserPassword.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -27,24 +27,15 @@ class Register extends Component
     this.setState({ formSubmit: true })
   };
 
-  handleUserName = (event) => {
-    this.setState({
-      name: event.target.value,
-    });
-  };
+      setFileInStateByKey = (blob, key) =>{
+        const file = new File([blob], key)
+        this.setState({
+            [key]: file
+        });
+    }
 
-   handleUserEmail = (event) => {
-    this.setState({
-      email: event.target.value,
-    });
-   };
   
-   handleUserPassword = (event) => {
-    this.setState({
-      password: event.target.value,
-    });
-   };
-  
+  onFormUpdate = (event) => this.setState({ [event.target.name]: event.target.value });
 
   render() {
     return (
@@ -55,25 +46,30 @@ class Register extends Component
 
               className="registerInput"
               placeholder="Name"
-              value={this.state.name}
-              onChange={this.handleUserName}/>
-        <br />
+            onChange={this.onFormUpdate}
+            name="name" />
+    
+          <br />
+
            <input
 
               className="registerInput"
               placeholder="Email"
-              value={this.state.email}
-              onChange={this.handleUserEmail}/>
+            onChange={this.onFormUpdate}
+          name="email"/>
         <br />
           <input
 
             className="registerInput"
             placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleUserPassword}/>
+            onChange={this.onFormUpdate}
+          name="password"/>
           <br />
           <p className="imageUploadText">Optional profile picture upload:</p>
-          <ProfilePicUpload />
+
+           <div className="registerAvatarImageCropper ">
+                            <AvatarImageCropper onChange={(fileBlob) => this.setState({profilepIC: fileBlob })} actions={[<button className="removeBtn" key={0}>Remove</button>]}/>
+                        </div>
           
           <button className="registerBtn"
             type="submit">Register</button>

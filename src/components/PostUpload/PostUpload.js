@@ -8,7 +8,7 @@ import axios from "axios";
 
 import AvatarImageCropper from "react-avatar-image-cropper";
 
-// Comment 
+// Commentt
 
 class PostUpload extends Component {
 
@@ -17,13 +17,15 @@ class PostUpload extends Component {
         this.state = {
             optionPicture1: null,
             optionPicture2: null,
-            status: "",
-            pic1Title: "",
-            pic2Title: "",
+            title: "",
+            optionTitle1: "",
+            optionTitle2: "",
         }
     }
 
-    handleSubmit = e =>{
+    handleSubmit = e =>
+    {
+        
         e.preventDefault()
         const user = this.props.currentUser
         const formData = new FormData()
@@ -34,29 +36,13 @@ class PostUpload extends Component {
             .then((response) =>{console.log(response)})
     }
 
-    statusSet = (event) =>{
-        this.setState({
-            status: event.target.value
-        })
-    }
+    onFormUpdate = (event) => this.setState({ [event.target.name]: event.target.value });
 
-    title1Set = (event) =>{
-        this.setState({
-            pic1Title: event.target.value
-        })
-    }
-
-    title2Set = (event) =>{
-        this.setState({
-            pic2Title: event.target.value
-        })
-    }
-    
     setFileInStateByKey = (blob, key) =>{
         const file = new File([blob], key)
         this.setState({
             [key]: file
-        })
+        });
     }
 
     render(){
@@ -66,16 +52,16 @@ class PostUpload extends Component {
                 <textarea className="statusInput"
                     multiline rows="4"
                     placeholder="Add a status/ desctiption"
-                    value={this.state.status}
-                    onChange={this.statusSet}
+                    onChange={this.onFormUpdate}
+                    name={"title"}
                 />
                 <div className="titlesWrap">
                     <div className="imageHolder1"> 
                         <input className="picTitle"
                             placeholder="Image Title"
                             maxlength="20"
-                            value={this.state.picTitle1}
-                            onChange={this.title1Set} />
+                            onChange={this.onFormUpdate}
+                        name="optionTitle1"/>
                         <div className="avatarImageCropper">
                             <AvatarImageCropper onChange={(fileBlob) => this.setState({optionPicture1: fileBlob })} actions={[<button className="removeBtn" key={0}>Remove</button>]} />
                         </div>
@@ -85,8 +71,9 @@ class PostUpload extends Component {
                         <input className="picTitle"
                             placeholder="Image Title"
                             maxlength="20"
-                            value={this.state.picTitle2}
-                            onChange={this.title2Set} />
+                            onChange={this.onFormUpdate}
+                            name="optionTitle2"
+                        />
                         <div className="avatarImageCropper">
                             <AvatarImageCropper onChange={(fileBlob) => this.setState({optionPicture2: fileBlob })} actions={[<button className="removeBtn" key={0}>Remove</button>]}/>
                         </div>
@@ -94,11 +81,9 @@ class PostUpload extends Component {
                 </div>
                     <button className="postUploadBtn">Upload</button>
                     <br/>
-
             </form>
         )
     }
 }
-
 
 export default PostUpload;

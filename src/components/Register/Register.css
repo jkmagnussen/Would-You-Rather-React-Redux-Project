@@ -36,3 +36,11 @@
   opacity: 0.6;
   border-radius: 10px;
 }
+
+.registerAvatarImageCropper {
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  margin: 5px;
+  margin-top: 0;
+}
