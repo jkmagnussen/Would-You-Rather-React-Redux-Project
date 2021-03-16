@@ -100,7 +100,7 @@ class App extends Component {
     else if (this.state.showSignUp === true){ 
       return (
         <div>
-        <Register />
+          <Register setUser={this.setUser}/>
           <video
             className="advert"
             style={{ marginTop: 25 }}

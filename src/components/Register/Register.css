@@ -18,7 +18,7 @@
   width: 60%;
   border-radius: 20px;
   margin-left: 10vw;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   opacity: 0.6;
   padding-top: 1%;
   padding-bottom: 1%;
@@ -32,15 +32,19 @@
   font-family: Galada;
   width: 40%;
   height: 100%;
+  margin-top: 20px;
   margin-bottom: 20px;
   opacity: 0.6;
   border-radius: 10px;
 }
 
 .registerAvatarImageCropper {
-  width: 400px;
-  height: 400px;
+  width: 140px;
+  height: 140px;
   background-color: black;
-  margin: 5px;
-  margin-top: 0;
+  margin: auto;
+}
+
+.removeBtn {
+  font-size: 10px;
 }

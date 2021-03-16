@@ -9,6 +9,7 @@ import CoveredPost from "./CoveredPost/CoveredPost"
 import ErrorPage from "./ErrorPage/ErrorPage.js";
 import ViewProfile from "./ProfilePage/ViewProfile/ViewProfile.js";
 import QuestionInfo from "./QuestionInfo";
+import EditProfile from "./ProfilePage/EditProfile/EditProfile";
 
 function Routes(props) {
   return (
@@ -16,6 +17,7 @@ function Routes(props) {
       <Switch>
         <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/profile" exact component={ViewProfile} />
+        <Route parh ="/editProfile" exact component={EditProfile} />
         <Route path="/coveredpost" exact component={CoveredPost} />
 
         <Route path="/leaderboard" exact component={Leaderboard} />

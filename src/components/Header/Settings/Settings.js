@@ -13,6 +13,18 @@ class Settings extends Component {
        
     };
   }
+
+        redirectToProfile = () => {
+   const { history } = this.props;
+          if (history) history.push('/profile');
+          this.props.toggleSettings();
+  }
+
+   redirectToEditProfile = () => {
+   const { history } = this.props;
+     if (history) history.push('/editProfile');
+     this.props.toggleSettings();
+    }
   
   render(){
     return (
@@ -21,9 +33,11 @@ class Settings extends Component {
           <img className="settingsCog" src={cog} />
           <h2 className="settingsTitle"> Settings </h2>
         </div>
+
           <p className="settingsList" onClick={this.redirectToProfile}>View Profile</p>
-          <p className="settingsList">Edit Profile</p>
-          <p className="settingsList">Account Settings</p>
+          <p className="settingsList" onClick={this.redirectToEditProfile}>Edit Profile</p>
+        <p className="settingsList">Account Settings</p>
+                <p className="settingsList" onClick={this.props.logout}>Logout</p>
           <img className="up" src={up} onClick={this.props.toggleSettings} />
       </div>
     );

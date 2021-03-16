@@ -4,6 +4,7 @@ import Search from "./Assets/search.png"
 import Notification from "./Assets/bell.png";
 
 import eye from "./Assets/eye.png";
+import eye1 from "./Assets/eye1.png";
 
 import friends from "./Assets/friends.png"
 import { withRouter } from 'react-router-dom';
@@ -97,9 +98,8 @@ class Header extends Component {
     if (Object.keys(this.props.userProfile).length > 0){
       return (
         <div >
-          <img className="eyeLogo" src={eye} onClick={this.redirectToDashboard}/>
+          <img className="eyeLogo" src={eye1} onClick={this.redirectToDashboard}/>
 
-          <button className="headerButtons" type="submit" onClick={() => this.props.logout()}>Logout</button>
           <img className="userImg" src={this.props.userProfile.avatarUrl} onClick={this.toggleSettings}/>
           
           <img className="HeaderBtn" src={Notification} onClick={this.toggleNotifications}/>
@@ -139,7 +139,7 @@ class Header extends Component {
       <div className="headerWrap">
         {this.RenderAppropriateInfo()}
         </div>
-        {this.state.toggleSettings == true ? <Settings toggleSettings={this.toggleSettings} /> : null}
+        {this.state.toggleSettings == true ? <Settings logout={this.props.logout} toggleSettings={this.toggleSettings} /> : null}
         {this.state.toggleNotifications == true ? <Notifications toggleNotifications={this.toggleNotifications} /> : null}
         {this.state.toggleConnections == true ? <Connections toggleConnections={this.toggleConnections} /> : null}
         {this.state.toggleSearchBar == true ? <SearchBar toggleSearchBar={this.toggleSearchBar} /> : null}

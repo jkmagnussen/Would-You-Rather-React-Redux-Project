@@ -7,7 +7,7 @@
 
 .buttonResultsWrap {
   display: flex;
-  width: 55%;
+  width: 65%;
   margin: auto;
   padding-bottom: 2%;
 }
@@ -24,10 +24,13 @@
 }
 
 .interactiveButtonDigit {
+  background-image: url("./Assets/red.png");
   background-color: rgb(180, 76, 76);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  height: 3vw;
+  width: 3vw;
+  margin-top: 1vw;
+  margin-left: 1vw;
   font-size: 2vw;
   color: white;
   font-family: Galada;
