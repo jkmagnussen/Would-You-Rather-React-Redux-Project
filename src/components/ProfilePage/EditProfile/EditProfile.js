@@ -46,12 +46,12 @@ class EditProfile extends React.Component {
         <div className="profileUserTop">
           <div className="profilePicAndName">
             <img className="profilePageThumbnail" src={user} />
-            <input className="profileUserNameDisplay" placeholder="User3482"></input>
+            <input className="editProfileUserNameDisplay" placeholder="User3482"></input>
 
           </div>
 
-          <div className="commentFormWrap">
-        <form>
+          <div >
+        <form className="editBioContainer">
           <textarea className="editBio" multiline
             rows="4" placeholder={this.state.userBio} />
         </form>
