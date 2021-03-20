@@ -14,7 +14,7 @@ class EditProfile extends React.Component {
     this.state = {
       viewUploads: true,
       viewShares: false,
-      userBio: "This is an example of text that would fill this status/ caption section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice."
+      userBio: "This is ann example of text that would fill this status/ caption section. This should be relevant to the blurred images displayed beneath to somehow incentivise a particular choice."
     };
   }
 
@@ -49,7 +49,7 @@ class EditProfile extends React.Component {
             <input className="editProfileUserNameDisplay" placeholder="User3482"></input>
 
           </div>
-          // hello
+
 
           <div >
         <form className="editBioContainer">
