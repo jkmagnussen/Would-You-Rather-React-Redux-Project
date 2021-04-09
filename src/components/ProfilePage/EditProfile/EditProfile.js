@@ -62,7 +62,7 @@ class EditProfile extends React.Component {
         </div>
 
         <div className="uploadShares">
-          <button className="uploadSharesButton1" onClick={this.openUploads}>Uploads</button>
+          <button className="uploadSharesButton1" onClick={this.openUploads}>Uploaaßds</button>
           <button className="uploadSharesButton2" onClick={this.openShares}>Shares</button>
         </div>
 
