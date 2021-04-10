@@ -56,14 +56,14 @@ class EditProfile extends React.Component {
           <textarea className="editBio" multiline
             rows="4" placeholder={this.state.userBio} />
         </form>
-        <button className="editProfileSuvmitBtn">ssaave</button>
+        <button className="editProfileSuvmitBtn">ssaave</button> 
       </div>  
           
         </div>
 
         <div className="uploadShares">
           <button className="uploadSharesButton1" onClick={this.openUploads}>Uploaaßds</button>
-          <button className="uploadSharesButton2" onClick={this.openShares}>Shares</button>
+          <button className="uploadSharesButton2" onClick={this.openShares}>Sharess</button>
         </div>
 
         {this.state.viewUploads == true ? <ProfileThumbnails /> : null}
