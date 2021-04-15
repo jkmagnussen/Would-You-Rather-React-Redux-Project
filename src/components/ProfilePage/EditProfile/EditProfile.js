@@ -56,7 +56,7 @@ class EditProfile extends React.Component {
           <textarea className="editBio" multiline
             rows="4" placeholder={this.state.userBio} />
         </form>
-        <button className="editProfileSuvmitBtn">Saave</button> 
+        <button className="editProfileSuvmitBtn">Saaave</button> 
       </div>  
           
         </div>
