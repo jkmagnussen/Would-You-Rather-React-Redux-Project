@@ -64,7 +64,7 @@ class EditProfile extends React.Component {
 
         <div className="uploadShares">
           <button className="uploadSharesButton1" onClick={this.openUploads}>Uploads</button>
-          <button className="uploadSharesButton2" onClick={this.openShares}>Shares</button>
+          <button className="uploadSharesButton2" onClick={this.openShares}>Sharess</button>
         </div>
 
         {this.state.viewUploads == true ? <ProfileThumbnails /> : null}
